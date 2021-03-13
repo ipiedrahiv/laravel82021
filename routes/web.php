@@ -19,6 +19,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/seed/show/{id}', 'App\Http\Controllers\SeedController@show')->name("seed.show");
+Route::get('/store/{id}', 'App\Http\Controllers\SeedController@show')->name("seed.show");
 
-Route::get('/seed/list', 'App\Http\Controllers\SeedController@listAll')->name("seed.list");
+Route::get('/store', 'App\Http\Controllers\SeedController@listAll')->name("seed.list");
