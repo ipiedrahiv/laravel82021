@@ -18,3 +18,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name("ho
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/store/{id}', 'App\Http\Controllers\SeedController@show')->name("seed.show");
+
+Route::get('/store', 'App\Http\Controllers\SeedController@listAll')->name("seed.list");
