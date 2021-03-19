@@ -7,8 +7,7 @@ use App\Models\Order;
 use App\Models\Item;
 use Illuminate\Http\Request;
 
-class CartController extends Controller
-{
+class CartController extends Controller{
     
     public function shop(Request $request){
         $data = []; //to be sent to the view
@@ -17,36 +16,41 @@ class CartController extends Controller
         $listProductsInCart = array();
         $total = 0;
         $ids = $request->session()->get("seeds"); 
+
         if($ids){
             $listProductsInCart = Seed::findMany($ids);
             foreach ($listProductsInCart as $product) {
                 $total = $total + $product->getPrice();
             }
         }
+
         $data["total"] = $total;
         $data["seeds"] = $listProductsInCart;
 
         return view('cart.shop')->with("data",$data);
+
     }
 
-    public function add($id, Request $request)
-    {
+    public function add($id, Request $request){
         $seeds = $request->session()->get("seeds");
         $seeds[$id] = $id;
         $request->session()->put('seeds', $seeds);
+
         return back();
+
     }
 
-    public function removeAll(Request $request)
-    {
+    public function removeAll(Request $request){
         $request->session()->forget('seeds');
+
         return back();
+
     }
 
-    public function buy(Request $request)
-    {
+    public function buy(Request $request){
         $data = []; //to be sent to the view
         $data["title"] = "Buy";
+
         $order = new Order();
         $order->setTotal(0);
         $order->save();
@@ -70,5 +74,6 @@ class CartController extends Controller
         $order->save();
 
         return view('cart.buy')->with("data",$data);
+
     }
 }
