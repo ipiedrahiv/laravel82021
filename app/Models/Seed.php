@@ -59,6 +59,10 @@ class Seed extends Model{
     public function setCategories($categories){
         $this->attributes['categories'] = $categories;
     }
+    
+    public function items(){
+        return $this->hasMany(Item::class);
+    }
 
 }
 
