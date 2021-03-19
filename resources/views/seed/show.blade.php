@@ -17,6 +17,7 @@
                     <b>Product keywords:</b> {{ $data["seed"]->getKeywords() }}<br /><br />
                 </div>
             </div>
+            <a href="{{ route('cart.add', ['id' => $data['seed']->getId()])}}" class= "btn btn-warning"> Add </a>
         </div>
     </div>
 </div>

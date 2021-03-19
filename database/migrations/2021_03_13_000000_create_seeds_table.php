@@ -8,7 +8,7 @@ class CreateSeedsTable extends Migration{
 
     public function up(){
 
-        Schema::create('seeds', function (Blueprint $table) {
+        Schema::create('seeds', function (Blueprint $table){
             $table->bigIncrements('id');
             $table->text('name');
             $table->text('seller');
