@@ -18,7 +18,7 @@
                         are more than welcome to check out our wonderful selection of fake seeds.
                     </p>
                     <br/><br/>
-                    <h2><a href="{{route('home.index')}}" class="page-section-heading text-center text-uppercase text-secondary mb-0" >Go to store</h2>
+                    <h2><a href="{{route('seed.list')}}" class="page-section-heading text-center text-uppercase text-secondary mb-0" >Go to store</h2>
                 </div>
             </div>
         </div>
