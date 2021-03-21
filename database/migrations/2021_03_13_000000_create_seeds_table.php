@@ -13,6 +13,7 @@ class CreateSeedsTable extends Migration{
             $table->text('name');
             $table->text('seller');
             $table->text('price');
+            $table->text('stock')->default('0');
             $table->text('keywords');
             $table->text('categories');
             $table->timestamps();
