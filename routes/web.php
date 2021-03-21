@@ -25,16 +25,13 @@ Route::get('/admin/seed/show/{id}/delete', 'App\Http\Controllers\AdminHomeContro
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+# FINAL USER
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/store/{id}', 'App\Http\Controllers\SeedController@show')->name("seed.show");
-
 Route::get('/store', 'App\Http\Controllers\SeedController@listAll')->name("seed.list");
 
+# CART
 Route::get('/cart/shop', 'App\Http\Controllers\CartController@shop')->name("cart.shop");
-
 Route::get('/cart/buy', 'App\Http\Controllers\CartController@buy')->name("cart.buy");
-
 Route::get('/cart/removeAll/', 'App\Http\Controllers\CartController@removeAll')->name("cart.removeAll");
-
 Route::get('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("cart.add");
