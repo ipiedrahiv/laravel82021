@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Seed extends Model{
 
@@ -11,6 +12,16 @@ class Seed extends Model{
 
     //Attributes: name, seller, price, keywords, categories, createdAt, updatedAt
     protected $fillable = ['name', 'seller', 'price', 'keywords', 'categories'];
+
+    public static function validateForm(Request $request){
+        $request->validate([
+            "name"=>"required",
+            "seller"=>"required",
+            "price"=>"required|numeric|gt:0",
+            "categories"=>"required",
+            "keywords"=>"required",
+        ]);
+    }
 
     public function getId(){
         return $this->attributes['id'];

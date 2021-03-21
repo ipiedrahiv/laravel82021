@@ -26,30 +26,6 @@ class SeedController extends Controller{
 
     }
 
-    public function create(){
-        $data = [];
-        $data['title'] = "Create seed";
-
-        return view('seed.create')->with("data",$data);
-        
-    }
-
-    public function save(Request $request){
-        Seed::validateForm($request);
-
-        Seed::create($request->all());
-
-        return back()->with('success','Successfuly created!');
-
-    }
-
-    public function delete($id){
-        Seed::findOrFail($id)->delete();
-
-        return redirect()->route('seed.list');
-
-    }
-
 }
 
 ?>

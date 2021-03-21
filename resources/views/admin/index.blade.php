@@ -9,6 +9,10 @@
 
                 <div class="card-body">
                    Welcome to the admin page
+                   <br /><br />
+                   <a href="{{route('admin.create')}}">Create Seed</a>
+                   <br /><br />
+                   <a href="{{route('admin.list')}}">Delete Seed</a>
                 </div>
             </div>
         </div>
