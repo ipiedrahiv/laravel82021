@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Http\Item;
 
 class Seed extends Model{
 
@@ -70,9 +71,13 @@ class Seed extends Model{
     public function setCategories($categories){
         $this->attributes['categories'] = $categories;
     }
-    
+
     public function items(){
         return $this->hasMany(Item::class);
+    }
+
+    public function reviews(){
+        return $this->hasMany(Review::class);
     }
 
 }

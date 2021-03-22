@@ -35,3 +35,7 @@ Route::get('/cart/shop', 'App\Http\Controllers\CartController@shop')->name("cart
 Route::get('/cart/buy', 'App\Http\Controllers\CartController@buy')->name("cart.buy");
 Route::get('/cart/removeAll/', 'App\Http\Controllers\CartController@removeAll')->name("cart.removeAll");
 Route::get('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("cart.add");
+
+# REVIEWS
+Route::get('/store/comment/create', 'App\Http\Controllers\ReviewController@create')->name("review.create");
+Route::post('/store/comment/save', 'App\Http\Controllers\ReviewController@save')->name("review.save");
