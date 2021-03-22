@@ -3,7 +3,8 @@
 return [
     'home' => 'Home',
     'menu' => 'Menu',
-    'website' => 'Website - Home',
+    'website' => 'The best place to get your seeds!',
+    'matilda' => 'Matilda la Matita',
     'store' => 'Store',
     'id' => 'Seed Id :',
     'name' => 'Name :',
