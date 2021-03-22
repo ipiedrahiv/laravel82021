@@ -10,14 +10,18 @@
             <div class="card">
                 <div class="card-header">{{ $data["seed"]->getName() }}</div>
                 <div class="card-body">
-                    <b>Product name:</b> {{ $data["seed"]->getName() }}<br />
-                    <b>Product seller:</b> {{ $data["seed"]->getSeller() }}<br /><br />
-                    <b>Product price:</b> {{ $data["seed"]->getPrice() }}<br /><br />
-                    <b>Product categories:</b> {{ $data["seed"]->getCategories() }}<br /><br />
-                    <b>Product keywords:</b> {{ $data["seed"]->getKeywords() }}<br /><br />
+                    <b>@lang('seed.productName')</b> {{ $data["seed"]->getName() }}<br />
+                    <b>@lang('seed.productSeller')</b> {{ $data["seed"]->getSeller() }}<br /><br />
+                    <b>@lang('seed.productPrice')</b> {{ $data["seed"]->getPrice() }}<br /><br />
+                    <b>@lang('seed.productCategories')</b> {{ $data["seed"]->getCategories() }}<br /><br />
+                    <b>@lang('seed.productKeywords')</b> {{ $data["seed"]->getKeywords() }}<br /><br />
                 </div>
             </div>
-            <a href="{{ route('cart.add', ['id' => $data['seed']->getId()])}}" class= "btn btn-warning"> Add </a>
+            <form method="POST" action="{{ route('cart.add',['id' => $data['seed']->getId()])}}">
+                @csrf
+                <input  placeholder="Quantity" required type="number" name="quantity" value="1" min="1" max="100" step="1"/>
+                <input type="submit" value ="@lang('seed.add')" >
+            </form>
         </div>
     </div>
 </div>

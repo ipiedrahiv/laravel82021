@@ -12,7 +12,8 @@ class SeedController extends Controller{
         $seed = Seed::findOrFail($id);
         $data["seed"] = $seed;
         $data["title"] = "Lista";
-
+        $data["quantity"] = 0;
+        
         return view('seed.show')->with("data",$data);
 
     }

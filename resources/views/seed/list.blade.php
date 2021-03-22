@@ -14,12 +14,12 @@
                         <a class="nav-link" href="{{route('seed.show',$seed->getId())}}"> {{ $seed->getName()}}: </a>
                         <a>
                             @if($loop->index == 0 || $loop->index== 1)
-                                <b>Seed ID : {{ $seed->getId() }}</b><br/>
+                                <b>@lang('seed.id')  {{ $seed->getId() }}</b><br/>
                             @else
-                                Seed Id : {{ $seed->getId() }}<br/>
+                                @lang('seed.id')  {{ $seed->getId() }}<br/>
                             @endif
-                                Name : {{ $seed->getName() }}<br/>
-                                Address : {{ $seed->getPrice() }}<br/>
+                                @lang('seed.name')  {{ $seed->getName() }}<br/>
+                                @lang('seed.price')  {{ $seed->getPrice() }}<br/>
 
                         </a>
                     </li>

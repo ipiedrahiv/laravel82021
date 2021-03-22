@@ -11,6 +11,7 @@ class Seed extends Model{
 
     //Attributes: name, seller, price, keywords, categories, createdAt, updatedAt
     protected $fillable = ['name', 'seller', 'price', 'keywords', 'categories'];
+    protected $quantity;
 
     public function getId(){
         return $this->attributes['id'];
@@ -59,7 +60,15 @@ class Seed extends Model{
     public function setCategories($categories){
         $this->attributes['categories'] = $categories;
     }
+
+    public function getQuantity(){
+        return $this->attributes['quantity'];
+    }
     
+    public function setQuantity($quantity){
+        $this->attributes['quantity'] = $quantity;
+    }
+
     public function items(){
         return $this->hasMany(Item::class);
     }

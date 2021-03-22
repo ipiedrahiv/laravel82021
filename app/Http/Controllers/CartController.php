@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\Item;
 use Illuminate\Http\Request;
 
+
 class CartController extends Controller{
     
     public function shop(Request $request){
@@ -18,10 +19,13 @@ class CartController extends Controller{
         $ids = $request->session()->get("seeds"); 
 
         if($ids){
-            $listProductsInCart = Seed::findMany($ids);
+            $listProductsInCart = Seed::findMany(array_keys($ids));
             foreach ($listProductsInCart as $product) {
-                $total = $total + $product->getPrice();
+                $total = $total + $product->getPrice() * $ids[$product->getId()];
+                $product->quantity = $ids[$product->getId()];
+
             }
+
         }
 
         $data["total"] = $total;
@@ -32,8 +36,9 @@ class CartController extends Controller{
     }
 
     public function add($id, Request $request){
+        $quantity = $request->get('quantity');
         $seeds = $request->session()->get("seeds");
-        $seeds[$id] = $id;
+        $seeds[$id] = $quantity;
         $request->session()->put('seeds', $seeds);
 
         return back();
@@ -57,16 +62,18 @@ class CartController extends Controller{
         
         $total = 0;
         $ids = $request->session()->get("seeds"); 
+        
         if($ids){
-            $listProductsInCart = Seed::findMany($ids);
+            $listProductsInCart = Seed::findMany(array_keys($ids));
             foreach ($listProductsInCart as $product) {
                 $item = new Item();
-                $item->setQuantity(1);
+                $item->setQuantity($ids[$product->getId()]);
                 $item->setSubTotal($product->getPrice());
                 $item->setProductId($product->getId());
                 $item->setOrderId($order->getId());
                 $item->save();
                 $total = $total + $product->getPrice();
+                
             }
         }
 
