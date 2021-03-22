@@ -37,7 +37,13 @@
             </form>
             @endauth
             @foreach($data["seed"]->reviews as $review)
-                - {{ $review->getComment() }}<br />
+            <br /><br />
+            <div class="card">
+                <div class="card-header">{{ $review->user->name }}</div>
+                <div class="card-body">
+                    {{ $review->getComment() }}
+                </div>
+            </div>
             @endforeach
             <br/><br/>
         </div>
