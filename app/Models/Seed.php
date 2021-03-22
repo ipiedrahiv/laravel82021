@@ -12,13 +12,14 @@ class Seed extends Model{
     use HasFactory;
 
     //Attributes: name, seller, price, keywords, categories, createdAt, updatedAt
-    protected $fillable = ['name', 'seller', 'price', 'keywords', 'categories'];
+    protected $fillable = ['name', 'seller', 'price', 'keywords', 'categories', 'stock'];
 
     public static function validateForm(Request $request){
         $request->validate([
             "name"=>"required",
             "seller"=>"required",
             "price"=>"required|numeric|gt:0",
+            "stock"=>"required|numeric|min:0",
             "categories"=>"required",
             "keywords"=>"required",
         ]);
@@ -54,6 +55,14 @@ class Seed extends Model{
 
     public function setPrice($price){
         $this->attributes['price'] = $price;
+    }
+
+    public function getStock(){
+        return $this->attributes['stock'];
+    }
+
+    public function setStock($stock){
+        $this->attributes['stock'] = $stock;
     }
 
     public function getKeywords(){
