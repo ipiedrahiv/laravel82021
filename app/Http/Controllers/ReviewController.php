@@ -19,6 +19,12 @@ class ReviewController extends Controller{
     public function save(Request $request){
         Review::validateForm($request);
 
+        $image = $request->file('image');
+        if($request->hasFile('image')){
+            $imageName = $image->getClientOriginalName();
+            $image->move(public_path().'/img',$imageName);
+        }
+
         Review::create($request->all());
 
         return back()->with('success','Successfuly uploaded!');
