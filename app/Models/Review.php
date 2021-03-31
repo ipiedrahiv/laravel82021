@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class Review extends Model{
 
     //Attributes: id, user, seed, rating, comment, image, created_at, updated_at
-    protected $fillable = ['rating', 'comment', 'user_id', 'seed_id'];
+    protected $fillable = ['rating', 'comment', 'user_id', 'seed_id', 'image'];
 
     public static function validateForm(Request $request){
         $request->validate([
@@ -68,12 +68,12 @@ class Review extends Model{
         $this->attributes['comment'] = $comment;
     }
 
-    //public function getImage(){
-    //    return $this->attributes['image'];
-    //}
+    public function getImage(){
+        return $this->attributes['image'];
+    }
 
-    //public function setImage($image){
-    //    $this->attributes['image'] = $image;
-    //}
+    public function setImage($image){
+        $this->attributes['image'] = $image;
+    }
 
 }
