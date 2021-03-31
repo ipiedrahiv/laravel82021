@@ -16,7 +16,7 @@
                     <b>Product price:</b> {{ $data["seed"]->getPrice() }}<br /><br />
                     <b>Product categories:</b> {{ $data["seed"]->getCategories() }}<br /><br />
                     <b>Product keywords:</b> {{ $data["seed"]->getKeywords() }}<br /><br />
-                    <b>Product image:</b> <img src="{{ asset('/img/seeds'.$data["seed"]->getImage()) }}"><br /><br />
+                    <b>Product image:</b> <img src="{{ asset('/img/'.$data["seed"]->getImage()) }}"><br /><br />
                 </div>
             </div>
             <br/><br/>

@@ -22,7 +22,6 @@ class ReviewController extends Controller{
         $image = $request->file('image');
         if($request->hasFile('image')){
             $imageName = $image->getClientOriginalName();
-            //dd($imageName);
             $image->move(public_path().'/img/',$imageName);
         }
 
