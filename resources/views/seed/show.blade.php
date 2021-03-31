@@ -26,8 +26,6 @@
                 Sign in to comment.
             @endguest
             @auth
-            {{ Auth::user()->id }}
-            {{  $data["seed"]->getId() }}
             <form method="POST" action="{{ route('review.save') }}" enctype="multipart/form-data">
                 @csrf
                 <input type="text" placeholder="rating" name="rating" value="{{ old('rating') }}" />
@@ -45,7 +43,7 @@
                 <div class="card-body">
                     {{ $review->getComment() }}
                     <br/><br/>
-                    <img src="{{ asset('/img'.$review->getImage()) }}">
+                    <img src="{{ asset('/img/'.$review->getImage()) }}">
                 </div>
             </div>
             @endforeach
