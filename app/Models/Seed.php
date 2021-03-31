@@ -12,7 +12,7 @@ class Seed extends Model{
     use HasFactory;
 
     //Attributes: name, seller, price, keywords, categories, createdAt, updatedAt
-    protected $fillable = ['name', 'seller', 'price', 'keywords', 'categories', 'stock'];
+    protected $fillable = ['name', 'seller', 'price', 'keywords', 'categories', 'stock', 'image'];
 
     public static function validateForm(Request $request){
         $request->validate([
@@ -87,6 +87,14 @@ class Seed extends Model{
 
     public function reviews(){
         return $this->hasMany(Review::class);
+    }
+
+    public function getImage(){
+        return $this->attributes['image'];
+    }
+
+    public function setImage($image){
+        $this->attributes['image'] = $image;
     }
 
 }

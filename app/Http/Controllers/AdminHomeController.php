@@ -36,7 +36,21 @@ class AdminHomeController extends Controller
     public function save(Request $request){
         Seed::validateForm($request);
 
-        Seed::create($request->all());
+        $image = $request->file('image');
+        if($request->hasFile('image')){
+            $imageName = $image->getClientOriginalName();
+            $image->move(public_path().'/img/',$imageName);
+        }
+
+        $seed = new Seed();
+        $seed->setName($request->input('name'));
+        $seed->setSeller($request->input('seller'));
+        $seed->setPrice($request->input('price'));
+        $seed->setKeywords($request->input('keywords'));
+        $seed->setCategories($request->input('categories'));
+        $seed->setStock($request->input('stock'));
+        $seed->setImage($imageName);
+        $seed->save();
 
         return back()->with('success','Successfuly created!');
 
