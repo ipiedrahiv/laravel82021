@@ -36,4 +36,10 @@ Route::get('/cart/buy', 'App\Http\Controllers\CartController@buy')->name("cart.b
 Route::get('/cart/removeAll', 'App\Http\Controllers\CartController@removeAll')->name("cart.removeAll");
 Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("cart.add");
 
+#ORDER
+Route::get('/order', 'App\Http\Controllers\OrderController@listAll')->name("order.index");
+Route::get('/order/{id}', 'App\Http\Controllers\OrderController@show')->name("order.show");
+Route::get('/order/download/{id}', 'App\Http\Controllers\OrderController@download')->name("order.download");
+
+
 

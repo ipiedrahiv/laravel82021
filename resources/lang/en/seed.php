@@ -8,6 +8,7 @@ return [
     'store' => 'Store',
     'id' => 'Seed Id :',
     'name' => 'Name :',
+    'seller' => 'Seller :',
     'price' =>'Price :',
     'productName' => 'Product name :',
     'productSeller' => 'Product seller :',

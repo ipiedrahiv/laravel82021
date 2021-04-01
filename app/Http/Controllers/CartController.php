@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Seed;
 use App\Models\Order;
 use App\Models\Item;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 
@@ -55,8 +56,9 @@ class CartController extends Controller{
     public function buy(Request $request){
         $data = []; //to be sent to the view
         $data["title"] = "Buy";
-
+        $id = Auth::id();
         $order = new Order();
+        $order->setUserId($id);
         $order->setTotal(0);
         $order->save();
         
@@ -72,11 +74,11 @@ class CartController extends Controller{
                 $item->setProductId($product->getId());
                 $item->setOrderId($order->getId());
                 $item->save();
-                $total = $total + $product->getPrice();
+                $total = $total + $product->getPrice() * $ids[$product->getId()];
                 
             }
         }
-
+        
         $order->setTotal($total);
         $order->save();
 
