@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Http\Item;
 
 class Seed extends Model{
 
     use HasFactory;
 
     //Attributes: name, seller, price, keywords, categories, createdAt, updatedAt
-    protected $fillable = ['name', 'seller', 'price', 'keywords', 'categories'];
+    protected $fillable = ['name', 'seller', 'price', 'keywords', 'categories', 'stock', 'image'];
     protected $quantity;
-
+    
     public static function validateForm(Request $request){
         $request->validate([
             "name"=>"required",
@@ -95,6 +96,14 @@ class Seed extends Model{
 
     public function reviews(){
         return $this->hasMany(Review::class);
+    }
+
+    public function getImage(){
+        return $this->attributes['image'];
+    }
+
+    public function setImage($image){
+        $this->attributes['image'] = $image;
     }
 
 }

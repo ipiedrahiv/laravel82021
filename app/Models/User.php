@@ -45,7 +45,7 @@ class User extends Authenticatable
         return $this->attributes['role'];
 
     }
-
+    
     public function getId(){
         return $this->attributes['id'];
     }
@@ -54,7 +54,16 @@ class User extends Authenticatable
         $this->attributes['id'] = $id;
     }
 
-    public function reviews(){
+    public function reviewsOrder(){
         return $this->hasMany(Order::class);
+    }
+        
+    public function getName(){
+        return $this->attributes['name'];
+
+    }
+
+    public function reviews(){
+        return $this->hasMany(Review::class);
     }
 }

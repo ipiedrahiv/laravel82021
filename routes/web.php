@@ -33,7 +33,7 @@ Route::get('/store', 'App\Http\Controllers\SeedController@listAll')->name("seed.
 # CART
 Route::get('/cart/shop', 'App\Http\Controllers\CartController@shop')->name("cart.shop");
 Route::get('/cart/buy', 'App\Http\Controllers\CartController@buy')->name("cart.buy");
-Route::get('/cart/removeAll', 'App\Http\Controllers\CartController@removeAll')->name("cart.removeAll");
+Route::get('/cart/removeAll/', 'App\Http\Controllers\CartController@removeAll')->name("cart.removeAll");
 Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("cart.add");
 
 #ORDER
@@ -41,5 +41,8 @@ Route::get('/order', 'App\Http\Controllers\OrderController@listAll')->name("orde
 Route::get('/order/{id}', 'App\Http\Controllers\OrderController@show')->name("order.show");
 Route::get('/order/download/{id}', 'App\Http\Controllers\OrderController@download')->name("order.download");
 
+# REVIEWS
+Route::get('/store/comment/create', 'App\Http\Controllers\ReviewController@create')->name("review.create");
+Route::post('/store/comment/save', 'App\Http\Controllers\ReviewController@save')->name("review.save");
 
 
