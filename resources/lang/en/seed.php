@@ -15,6 +15,7 @@ return [
     'productKeywords' => 'Product keywords :',
     'productImage' => 'Product image :',
     'add' =>'Add to Cart',
+    'search' =>'Search',
 
 
 ];
