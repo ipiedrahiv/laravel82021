@@ -29,6 +29,7 @@ Auth::routes();
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/store/{id}', 'App\Http\Controllers\SeedController@show')->name("seed.show");
 Route::get('/store', 'App\Http\Controllers\SeedController@listAll')->name("seed.list");
+Route::post('/store/query', 'App\Http\Controllers\SeedController@search')->name("seed.search");
 
 # CART
 Route::get('/cart/shop', 'App\Http\Controllers\CartController@shop')->name("cart.shop");
@@ -44,5 +45,3 @@ Route::get('/order/download/{id}', 'App\Http\Controllers\OrderController@downloa
 # REVIEWS
 Route::get('/store/comment/create', 'App\Http\Controllers\ReviewController@create')->name("review.create");
 Route::post('/store/comment/save', 'App\Http\Controllers\ReviewController@save')->name("review.save");
-
-
