@@ -1,28 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
+
 use App\Models\Review;
+use Illuminate\Http\Request;
 
-class ReviewController extends Controller{
-
-    public function create(){
+class ReviewController extends Controller
+{
+    public function create()
+    {
         $data = [];
-        $data['title'] = "Write comment";
+        $data['title'] = 'Write comment';
 
-        return view('seed.show')->with("data",$data);
-
+        return view('seed.show')->with('data', $data);
     }
 
-    public function save(Request $request){
+    public function save(Request $request)
+    {
         Review::validateForm($request);
 
         $image = $request->file('image');
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $imageName = $image->getClientOriginalName();
-            $image->move(public_path().'/img/',$imageName);
+            $image->move(public_path().'/img/', $imageName);
         }
 
         $review = new Review();
@@ -34,8 +34,6 @@ class ReviewController extends Controller{
 
         $review->save();
 
-        return back()->with('success','Successfuly uploaded!');
-
+        return back()->with('success', 'Successfuly uploaded!');
     }
-
 }
