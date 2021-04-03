@@ -14,7 +14,7 @@ return [
     'productCategories' => 'Product categories :',
     'productKeywords' => 'Product keywords :',
     'productImage' => 'Product image :',
-    'add' =>'Add',
+    'add' =>'Add to Cart',
 
 
 ];
