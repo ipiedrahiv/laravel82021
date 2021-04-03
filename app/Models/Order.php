@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Item;
 
 class Order extends Model{
 
@@ -29,6 +28,20 @@ class Order extends Model{
     public function setTotal($total){
         $this->attributes['total'] = $total;
 
+    }
+
+    public function getUserId(){
+        return $this->attributes['user_id'];
+
+    }
+
+    public function setUserId($user_id){
+        $this->attributes['user_id'] = $user_id;
+
+    }
+
+    public function user(){
+        return $this->hasOne(User::class);
     }
 
     public function items(){

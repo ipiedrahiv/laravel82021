@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            Felicidades eres el mejor nunca cambies.
+            @lang('cart.message')
         </div>
     </div>
 </div>

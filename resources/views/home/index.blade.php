@@ -11,14 +11,12 @@
             </div>
             <div class="col">
                 <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                    <h4 class="text-uppercase mb-4">About us:</h4>
+                    <h4 class="text-uppercase mb-4">@lang('home.about')</h4>
                     <p class="lead mb-0">
-                        This web page is exclusively an academic endeavor! Pleas don't actually
-                        believe that you can buy seeds from us, we don't have any seeds. But you
-                        are more than welcome to check out our wonderful selection of fake seeds.
+                        @lang('home.message')
                     </p>
                     <br/><br/>
-                    <h2><a href="{{route('seed.list')}}" class="page-section-heading text-center text-uppercase text-secondary mb-0" >Go to store</h2>
+                    <h2><a href="{{route('seed.list')}}" class="page-section-heading text-center text-uppercase text-secondary mb-0" >@lang('home.goStore')</h2>
                 </div>
             </div>
         </div>

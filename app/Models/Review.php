@@ -17,6 +17,7 @@ class Review extends Model{
             "comment"=>"required",
             "user_id"=>"required",
             "seed_id"=>"required",
+            "image"=>"required",
         ]);
     }
 
