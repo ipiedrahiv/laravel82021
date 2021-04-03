@@ -7,5 +7,4 @@ return [
     'deleteSeed' => 'Delete Seed',
     'delete' => 'Delete',
 
-
 ];

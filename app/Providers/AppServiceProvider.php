@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema;
 use DB;
 use Event;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,10 +27,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        if(env('APP_ENV') == 'local') {
+        if (env('APP_ENV') == 'local') {
             DB::connection()->enableQueryLog();
-            Event::listen(RequestHandled::class, function ($event){
-                if($event->$request->has('sql-debug')){
+            Event::listen(RequestHandled::class, function ($event) {
+                if ($event->$request->has('sql-debug')) {
                     $queries = DB::getQueryLog();
                     dd($queries);
                 }
