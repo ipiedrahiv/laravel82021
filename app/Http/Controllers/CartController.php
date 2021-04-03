@@ -14,7 +14,6 @@ class CartController extends Controller{
     public function shop(Request $request){
         $data = []; //to be sent to the view
         $data["title"] = "Store seeds";
-
         $listProductsInCart = array();
         $total = 0;
         $ids = $request->session()->get("seeds"); 

@@ -12,9 +12,8 @@ use PDF;
 class OrderController extends Controller{
 
     public function show($id){
-        
         $data = []; //What will be sent to the view
-        $order = Order::with('items')->find($id);        
+        $order = Order::with('items')->find($id);
         $data["order"] = $order;
         $data["title"] = "Lista";
         
@@ -39,7 +38,8 @@ class OrderController extends Controller{
         $data['order'] = $order;
         
         return view('order.download')->with("data",$data);
-}
+    
+    }
 
 
 }
