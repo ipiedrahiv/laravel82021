@@ -17,5 +17,4 @@ return [
     'add' =>'Add to Cart',
     'search' =>'Search',
 
-
 ];
