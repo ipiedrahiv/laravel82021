@@ -45,7 +45,19 @@ class User extends Authenticatable
         return $this->attributes['role'];
 
     }
+    
+    public function getId(){
+        return $this->attributes['id'];
+    }
 
+    public function setId($id){
+        $this->attributes['id'] = $id;
+    }
+
+    public function reviewsOrder(){
+        return $this->hasMany(Order::class);
+    }
+        
     public function getName(){
         return $this->attributes['name'];
 

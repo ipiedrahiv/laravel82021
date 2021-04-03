@@ -17,8 +17,8 @@
                             @else
                                 <a class="nav-link" href="{{route('seed.show',$seed->getId())}}" style="color:red;"> {{ $seed->getName()}}: </a>
                             @endif
-                                Seller : {{ $seed->getSeller() }}<br/>
-                                Price : {{ $seed->getPrice() }}<br/>
+                                @lang('seed.seller') {{ $seed->getSeller() }}<br/>
+                                @lang('seed.price') {{ $seed->getPrice() }}<br/>
 
                         </a>
                     </li>

@@ -4,20 +4,19 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-        Products in Cart
+        @lang('cart.productsCart')
             <ul id="errors">
             
                 @foreach($data["seeds"] as $seed)
                     <li>
-                    {{ $seed->getId() }} - {{ $seed->getName() }} : {{ $seed->getPrice() }}
-                    </li>
+                    {{ $seed->getId() }} - {{ $seed->getName() }} : {{ $seed->getPrice() }} - @lang('cart.quantity') {{$seed->getQuantity() }} 
                 @endforeach
             </ul>
             <br />
-            Total in cart: {{ $data['total'] }}<br /><br />
-            <a href="{{ route('cart.buy') }}">Buy</a>
+            @lang('cart.total') {{ $data['total'] }}<br /><br />
+            <a href="{{ route('cart.buy') }}">@lang('cart.buy')</a>
             <br /><br />
-            <a href="{{ route('cart.removeAll') }}">Remove all products from cart</a>
+            <a href="{{ route('cart.removeAll') }}">@lang('cart.remove')</a>
         </div>
     </div>
 </div>
