@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Item;
+use App\Models\Seed;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use PDF;
@@ -39,6 +40,19 @@ class OrderController extends Controller{
         
         return view('order.download')->with("data",$data);
     
+    }
+
+    public function excel(){
+        $id = Auth::user()->getId();
+        $data = [];
+        $data['title'] = 'Factura';
+        $orders = Order::where('user_id',$id)->with('items')->get();
+        $products = Seed::All();
+        $data['orders'] = $orders;
+        $data["products"] = $products;
+
+        return view('order.excel')->with("data",$data);
+        
     }
 
 

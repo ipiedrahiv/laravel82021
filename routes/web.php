@@ -22,6 +22,7 @@ Route::get('/admin/seed/create', 'App\Http\Controllers\AdminHomeController@creat
 Route::post('/admin/seed/save', 'App\Http\Controllers\AdminHomeController@save')->name("admin.save");
 Route::get('/admin/seed/list', 'App\Http\Controllers\AdminHomeController@listAll')->name("admin.list");
 Route::get('/admin/seed/show/{id}/delete', 'App\Http\Controllers\AdminHomeController@delete')->name("admin.delete");
+Route::get('/admin/seed/download', 'App\Http\Controllers\AdminHomeController@download')->name("admin.download");
 
 Auth::routes();
 
@@ -40,6 +41,7 @@ Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("
 Route::get('/order', 'App\Http\Controllers\OrderController@listAll')->name("order.index");
 Route::get('/order/{id}', 'App\Http\Controllers\OrderController@show')->name("order.show");
 Route::get('/order/download/{id}', 'App\Http\Controllers\OrderController@download')->name("order.download");
+Route::get('/order/seed/excel', 'App\Http\Controllers\OrderController@excel')->name("order.excel");
 
 # REVIEWS
 Route::get('/store/comment/create', 'App\Http\Controllers\ReviewController@create')->name("review.create");

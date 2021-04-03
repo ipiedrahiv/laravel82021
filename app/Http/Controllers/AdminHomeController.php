@@ -82,4 +82,9 @@ class AdminHomeController extends Controller
 
     }
 
+    public function download(){
+        return view('admin.download');
+
+    }
+
 }

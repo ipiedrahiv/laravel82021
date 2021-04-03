@@ -70,4 +70,9 @@
   function displayEmbeddedPdf (){
     window.print();   
 }
-  
+
+function tableToExcel () {
+  $("#ordertable").table2excel({
+      filename: "Orders.xls"
+  });
+}

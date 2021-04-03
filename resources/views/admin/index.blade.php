@@ -13,6 +13,8 @@
                    <a href="{{route('admin.create')}}">@lang('admin.create')</a>
                    <br /><br />
                    <a href="{{route('admin.list')}}">@lang('admin.deleteSeed')</a>
+                   <br /><br />
+                   <a href="{{route('admin.download')}}">Client description</a>
                 </div>
             </div>
         </div>
