@@ -29,32 +29,7 @@ class Item extends Model
         $this->attributes['quantity'] = $quantity;
     }
 
-<<<<<<< HEAD
     public function getSubTotal(){
-=======
-    public function getOrderId()
-    {
-        return $this->attributes['order_id'];
-    }
-
-    public function setOrderId($order_id)
-    {
-        $this->attributes['order_id'] = $order_id;
-    }
-
-    public function getProductId()
-    {
-        return $this->attributes['product_id'];
-    }
-
-    public function setProductId($product_id)
-    {
-        $this->attributes['product_id'] = $product_id;
-    }
-
-    public function getSubTotal()
-    {
->>>>>>> 202e1dce67c5782255ad54b418954b5ae11e4774
         return $this->attributes['subtotal'];
     }
 
@@ -82,7 +57,6 @@ class Item extends Model
     {
         return $this->belongsTo(Seed::class);
     }
-<<<<<<< HEAD
     
     public function getProductId(){
         return $this->attributes['product_id'];
@@ -93,6 +67,4 @@ class Item extends Model
         $this->attributes['product_id'] = $product_id;
 
     }
-=======
->>>>>>> 202e1dce67c5782255ad54b418954b5ae11e4774
 }
