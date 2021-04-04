@@ -3,8 +3,10 @@
 return [
     'admin' => 'Admin',
     'welcome' => 'Welcome to the admin page',
-    'create' => 'Create Seed',
-    'deleteSeed' => 'Delete Seed',
+    'create' => 'Create seed',
+    'deleteSeed' => 'Delete seed',
     'delete' => 'Delete',
+    'excel' => 'Download excel',
+    'listProviders' =>'Providers List',
 
 ];

@@ -5,7 +5,6 @@
 @section('content')
 
 <div class="container">
-
     <div class="row p-5">
         <div class="col-md-12">
             <ul id="errors">
@@ -24,7 +23,6 @@
                             @endif
                                 @lang('seed.seller') {{ $seed->getSeller() }}<br/>
                                 @lang('seed.price') {{ $seed->getPrice() }}<br/>
-
                         </a>
                     </li>
                 @endforeach

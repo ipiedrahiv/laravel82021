@@ -18,8 +18,8 @@
             </div>
         </div>
         <div class="parent-container">
-            <h3>Download</h3>
-            <a class="btn btn-primary btn-lg active" href="{{route('order.download',['id' => $data['order']->getId()])}}"> Open</a>
+            <h3> @lang('order.download')</h3>
+            <a class="btn btn-primary btn-lg active" href="{{route('order.download',['id' => $data['order']->getId()])}}"> @lang('order.open')</a>
         </div> 
     </div>
 </div>

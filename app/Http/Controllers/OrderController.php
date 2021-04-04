@@ -33,7 +33,7 @@ class OrderController extends Controller
         $data['title'] = 'Factura';
         $order = Order::with('items')->find($id);
         $data['order'] = $order;
-
+        
         return view('order.download')->with('data', $data);
     }
 }
