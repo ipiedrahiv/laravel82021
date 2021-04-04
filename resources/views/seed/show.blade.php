@@ -19,11 +19,17 @@
                     <b>@lang('seed.productImage')</b><img class="center" src="{{ asset('/img/'.$data['seed']->getImage()) }}"><br /><br />
                 </div>
             </div>
+            <br /><br />
             <form method="POST" action="{{ route('cart.add',['id' => $data['seed']->getId()])}}">
                 @csrf
                 <input  placeholder="Quantity" required type="number" name="quantity" value="1" min="1" max="100" step="1"/>
                 <input type="submit" value ="@lang('seed.add')" >
             </form>
+            <div class="divider-custom divider-dark">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
             @guest
                 @lang('seed.singIn')
             @endguest
@@ -35,6 +41,7 @@
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                 <input type="hidden" name="seed_id" value="{{  $data['seed']->getId() }}">
                 <input type="file" placeholder="Select image" name="image" value="{{ old('image') }}" />
+                <br/><br/>
                 <input type="submit" value="Send" />
             </form>
             @endauth

@@ -8,6 +8,11 @@
     <div class="row p-5">
         <div class="col-md-12">
             <ul id="errors">
+                <form method="POST" action="{{ route('seed.search')}}">
+                    @csrf
+                    <input type="text" name="query" value="{{ old('query') }}"/>
+                    <input type="submit" value ="@lang('seed.search')" >
+                </form>
                 @foreach($data["seeds"] as $seed)
                     <li class="nav-item">
                         <a>

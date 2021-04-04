@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -41,29 +40,33 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getRole(){
+    public function getRole()
+    {
         return $this->attributes['role'];
-
     }
-    
-    public function getId(){
+
+    public function getId()
+    {
         return $this->attributes['id'];
     }
 
-    public function setId($id){
+    public function setId($id)
+    {
         $this->attributes['id'] = $id;
     }
 
-    public function reviewsOrder(){
+    public function reviewsOrder()
+    {
         return $this->hasMany(Order::class);
     }
-        
-    public function getName(){
-        return $this->attributes['name'];
 
+    public function getName()
+    {
+        return $this->attributes['name'];
     }
 
-    public function reviews(){
+    public function reviews()
+    {
         return $this->hasMany(Review::class);
     }
 }

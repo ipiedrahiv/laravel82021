@@ -9,5 +9,4 @@ return [
     'excel' => 'Download excel',
     'listProviders' =>'Providers List',
 
-
 ];

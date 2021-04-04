@@ -2,47 +2,70 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Item extends Model{
-
+class Item extends Model
+{
     //attributes id, subtotal, quantity, product_id, order_id, created_at, updated_at
     protected $fillable = ['subtotal','quantity','product_id','order_id'];
 
-    public function getId(){
+    public function getId()
+    {
         return $this->attributes['id'];
-
     }
 
-    public function setId($id){
+    public function setId($id)
+    {
         $this->attributes['id'] = $id;
-
     }
 
-    public function getQuantity(){
+    public function getQuantity()
+    {
         return $this->attributes['quantity'];
-
     }
 
-    public function setQuantity($quantity){
+    public function setQuantity($quantity)
+    {
         $this->attributes['quantity'] = $quantity;
-
     }
 
+<<<<<<< HEAD
     public function getSubTotal(){
+=======
+    public function getOrderId()
+    {
+        return $this->attributes['order_id'];
+    }
+
+    public function setOrderId($order_id)
+    {
+        $this->attributes['order_id'] = $order_id;
+    }
+
+    public function getProductId()
+    {
+        return $this->attributes['product_id'];
+    }
+
+    public function setProductId($product_id)
+    {
+        $this->attributes['product_id'] = $product_id;
+    }
+
+    public function getSubTotal()
+    {
+>>>>>>> 202e1dce67c5782255ad54b418954b5ae11e4774
         return $this->attributes['subtotal'];
-
     }
 
-    public function setSubTotal($subtotal){
+    public function setSubTotal($subtotal)
+    {
         $this->attributes['subtotal'] = $subtotal;
-
     }
 
-    public function order(){
+    public function order()
+    {
         return $this->belongsTo(Order::class);
-
     }
    
     public function getOrderId(){
@@ -55,10 +78,11 @@ class Item extends Model{
 
     }
 
-    public function product(){
+    public function product()
+    {
         return $this->belongsTo(Seed::class);
-        
     }
+<<<<<<< HEAD
     
     public function getProductId(){
         return $this->attributes['product_id'];
@@ -69,4 +93,6 @@ class Item extends Model{
         $this->attributes['product_id'] = $product_id;
 
     }
+=======
+>>>>>>> 202e1dce67c5782255ad54b418954b5ae11e4774
 }

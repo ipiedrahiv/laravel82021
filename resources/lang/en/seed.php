@@ -17,6 +17,7 @@ return [
     'productImage' => 'Product image :',
     'add' => 'Add',
     'singIn' => 'Sign in to comment.',
-
+    'add' =>'Add to Cart',
+    'search' =>'Search',
 
 ];
