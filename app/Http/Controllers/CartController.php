@@ -59,7 +59,6 @@ class CartController extends Controller
         $order->setUserId($id);
         $order->setTotal(0);
         $order->save();
-
         $total = 0;
         $ids = $request->session()->get('seeds');
 

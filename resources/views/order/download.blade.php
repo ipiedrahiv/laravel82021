@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="parent-container">
-         <h3 class="pdf-name">Receipt</h3><button type="button" class="open-pdf" onclick="displayEmbeddedPdf()">Print</button>
+         <h3 class="pdf-name">@lang('order.receipt')</h3><button type="button" class="open-pdf" onclick="displayEmbeddedPdf()"> @lang('order.print')</button>
         </div>
         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
             <img class="img-fluid" src="{{ asset('/img/mascot.png') }}" alt="" />

@@ -81,4 +81,14 @@ class AdminHomeController extends Controller
 
         return view('admin.show')->with('data', $data);
     }
+
+    public function download()
+    {
+        $data = [];
+        $data['title'] = 'Providers List';
+        $products = Seed::all();
+        $data['products'] = $products;
+        
+        return view('admin.download')->with('data', $data);
+    }
 }

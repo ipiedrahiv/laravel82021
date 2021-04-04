@@ -16,9 +16,7 @@
                     <b>@lang('seed.productPrice')</b> {{ $data["seed"]->getPrice() }}<br /><br />
                     <b>@lang('seed.productCategories')</b> {{ $data["seed"]->getCategories() }}<br /><br />
                     <b>@lang('seed.productKeywords')</b> {{ $data["seed"]->getKeywords() }}<br /><br />
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <b>Product image:</b> <img src="{{ asset('/img/'.$data['seed']->getImage()) }}"><br /><br />
-                    </div>
+                    <b>@lang('seed.productImage')</b><img class="center" src="{{ asset('/img/'.$data['seed']->getImage()) }}"><br /><br />
                 </div>
             </div>
             <br /><br />
@@ -33,7 +31,7 @@
                 <div class="divider-custom-line"></div>
             </div>
             @guest
-                Sign in to comment.
+                @lang('seed.singIn')
             @endguest
             @auth
             <form method="POST" action="{{ route('review.save') }}" enctype="multipart/form-data">
@@ -54,7 +52,7 @@
                 <div class="card-body">
                     {{ $review->getComment() }}
                     <br/><br/>
-                    <img src="{{ asset('/img/'.$review->getImage()) }}">
+                    <img class="center" src="{{ asset('/img/'.$review->getImage()) }}">
                 </div>
             </div>
             @endforeach
