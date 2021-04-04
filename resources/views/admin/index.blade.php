@@ -14,7 +14,7 @@
                    <br /><br />
                    <a href="{{route('admin.list')}}">@lang('admin.deleteSeed')</a>
                    <br /><br />
-                   <a href="{{route('admin.download')}}">Client description</a>
+                   <a href="{{route('admin.download')}}">@lang('admin.listProviders')</a>
                 </div>
             </div>
         </div>

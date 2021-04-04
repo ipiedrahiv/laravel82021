@@ -27,5 +27,3 @@ class SeedController extends Controller{
     }
 
 }
-
-?>

@@ -17,7 +17,6 @@
                         </a>
                     </li>
                 @endforeach
-                <a href="{{route('order.excel')}}">Download Orders</a>
             </ul>
         </div>
     </div>

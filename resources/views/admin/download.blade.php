@@ -1,38 +1,33 @@
 @extends('layouts.app')
+
+@section("title", $data["title"])
+
 @section('content')
 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <table id="studtable">
+            <table id="ordertable">
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Address</th>
+                    <th>@lang('seed.id')</th>
+                    <th>@lang('seed.name')</th>
+                    <th>@lang('seed.seller')</th>
+                    <th>@lang('seed.stock')</th>    
+                    <th>@lang('seed.price')</th>
+                    <th>@lang('seed.categories')</th>
                 </tr>
-                <tr>
-                    <td>101</td>
-                    <td>Alex</td>
-                    <td>15</td>
-                    <td>Maldives</td>
-                </tr>
-                <tr>
-                    <td>102</td>
-                    <td>Chris</td>
-                    <td>14</td>
-                    <td>Canada</td>
-                </tr>
-                
-                <tr>
-                    <td>103</td>
-                    <td>Jay</td>
-                    <td>15</td>
-                    <td>Toronto</td>
-                </tr>
-        
+                @foreach($data["products"] as $product)
+                    <tr>
+                        <td>{{ $product->getId()}}</td>
+                        <td>{{ $product->getName() }}</td>
+                        <td>{{ $product->getSeller()}}</td>    
+                        <td>{{ $product->getStock()}}</td>
+                        <td>{{ $product->getPrice()}}</td>
+                        <td>{{ $product->getCategories()}}</td>
+                    </tr>
+                @endforeach
             </table>
-            <button type="button" class="excel" onclick="tableToExcel('studtable', 'Students')">Print</button>
+            <button type="button" class="excel" onclick="tableToExcel('ordertable', 'Orders')">@lang('admin.excel')</button>
         </div>
     </div>
 </div>

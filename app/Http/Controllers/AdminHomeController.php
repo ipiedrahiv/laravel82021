@@ -83,7 +83,13 @@ class AdminHomeController extends Controller
     }
 
     public function download(){
-        return view('admin.download');
+        $id = Auth::user()->getId();
+        $data = [];
+        $data['title'] = 'Seed List';
+        $products = Seed::All();
+        $data['products'] = $products;
+
+        return view('admin.download')->with("data",$data);
 
     }
 

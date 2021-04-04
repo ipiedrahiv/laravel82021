@@ -7,7 +7,6 @@ use App\Models\Item;
 use App\Models\Seed;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use PDF;
 
 
 class OrderController extends Controller{
@@ -42,20 +41,4 @@ class OrderController extends Controller{
     
     }
 
-    public function excel(){
-        $id = Auth::user()->getId();
-        $data = [];
-        $data['title'] = 'Factura';
-        $orders = Order::where('user_id',$id)->with('items')->get();
-        $products = Seed::All();
-        $data['orders'] = $orders;
-        $data["products"] = $products;
-
-        return view('order.excel')->with("data",$data);
-        
-    }
-
-
 }
-
-?>

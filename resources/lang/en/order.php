@@ -8,5 +8,10 @@ return [
     'quantity' => 'Quantity :',
     'subtotal' => 'Subtotal :',
     'total' => 'Total :',
+    'receipt' => 'Receipt',
+    'print' => 'Print',
+    'download' => 'Download',
+    'open' => 'Open',
+
 
 ];
