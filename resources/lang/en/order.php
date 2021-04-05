@@ -13,5 +13,4 @@ return [
     'download' => 'Download',
     'open' => 'Open',
 
-
 ];

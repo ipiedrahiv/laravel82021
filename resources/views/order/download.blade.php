@@ -3,6 +3,8 @@
 @section("title", $data["title"])
 
 @section('content')
+
+</br></br>
 <div class="container" id="principal">
     <div class="row justify-content-center">
         <div class="col-md-8">
