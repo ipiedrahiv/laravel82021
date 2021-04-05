@@ -36,7 +36,7 @@
             @auth
             <form method="POST" action="{{ route('review.save') }}" enctype="multipart/form-data">
                 @csrf
-                <input type="text" placeholder="rating" name="rating" value="{{ old('rating') }}" />
+                <input required type="number" placeholder="rating" name="rating" value="{{ old('rating') }}" min="1" max="5" step="1"/>
                 <input type="text" placeholder="Enter comment" name="comment" value="{{ old('comment') }}" />
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                 <input type="hidden" name="seed_id" value="{{  $data['seed']->getId() }}">
