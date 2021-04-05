@@ -91,4 +91,3 @@ class Review extends Model
         $this->attributes['image'] = $image;
     }
 }
-

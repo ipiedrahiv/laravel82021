@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     //attributes id, subtotal, quantity, product_id, order_id, created_at, updated_at
-    protected $fillable = ['subtotal','quantity','product_id','order_id'];
+    protected $fillable = ['subtotal', 'quantity', 'product_id', 'order_id'];
 
     public function getId()
     {
@@ -29,7 +29,8 @@ class Item extends Model
         $this->attributes['quantity'] = $quantity;
     }
 
-    public function getSubTotal(){
+    public function getSubTotal()
+    {
         return $this->attributes['subtotal'];
     }
 
@@ -42,29 +43,29 @@ class Item extends Model
     {
         return $this->belongsTo(Order::class);
     }
-   
-    public function getOrderId(){
+
+    public function getOrderId()
+    {
         return $this->attributes['order_id'];
-
     }
-    
-    public function setOrderId($order_id){
-        $this->attributes['order_id'] = $order_id;
 
+    public function setOrderId($order_id)
+    {
+        $this->attributes['order_id'] = $order_id;
     }
 
     public function product()
     {
         return $this->belongsTo(Seed::class);
     }
-    
-    public function getProductId(){
-        return $this->attributes['product_id'];
 
+    public function getProductId()
+    {
+        return $this->attributes['product_id'];
     }
 
-    public function setProductId($product_id){
+    public function setProductId($product_id)
+    {
         $this->attributes['product_id'] = $product_id;
-
     }
 }

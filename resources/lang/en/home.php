@@ -17,6 +17,5 @@ return [
     'aboutMatilda' => 'About Matilda la Matita',
     'bestShop' => 'The best online seed shop!',
     'copyRight' => 'Copyright © Your Website 2020',
-    
 
 ];
