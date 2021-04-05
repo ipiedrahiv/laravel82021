@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-header">{{ $data["seed"]->getName() }}</div>
                 <div class="card-body">
-                    <b>@lang('seed.productName')</b> {{ $data["seed"]->getName() }}<br />
+                    <b>@lang('seed.productName')</b> {{ $data["seed"]->getName() }}<br /><br />
                     <b>@lang('seed.productSeller')</b> {{ $data["seed"]->getSeller() }}<br /><br />
                     <b>@lang('seed.productPrice')</b> {{ $data["seed"]->getPrice() }}<br /><br />
                     <b>@lang('seed.productCategories')</b> {{ $data["seed"]->getCategories() }}<br /><br />
