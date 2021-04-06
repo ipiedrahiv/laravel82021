@@ -36,6 +36,7 @@ Route::post('/store/query', 'App\Http\Controllers\SeedController@search')->name(
 Route::get('/cart/shop', 'App\Http\Controllers\CartController@shop')->name('cart.shop');
 Route::get('/cart/buy', 'App\Http\Controllers\CartController@buy')->name('cart.buy');
 Route::get('/cart/removeAll/', 'App\Http\Controllers\CartController@removeAll')->name('cart.removeAll');
+Route::get('/cart/remove/{id}', 'App\Http\Controllers\CartController@remove')->name('cart.remove');
 Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name('cart.add');
 
 //ORDER

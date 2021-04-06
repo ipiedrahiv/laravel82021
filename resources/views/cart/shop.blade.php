@@ -9,14 +9,14 @@
             
                 @foreach($data["seeds"] as $seed)
                     <li>
-                    {{ $seed->getId() }} - {{ $seed->getName() }} : {{ $seed->getPrice() }} - @lang('cart.quantity') {{$seed->getQuantity() }} 
+                    {{ $seed->getId() }} - {{ $seed->getName() }} : {{ $seed->getPrice() }} - @lang('cart.quantity') {{$seed->getQuantity() }}  <a href="{{ route('cart.remove',['id' => $seed->getId()])}}">@lang('cart.remove')</a>
                 @endforeach
             </ul>
             <br />
             @lang('cart.total') {{ $data['total'] }}<br /><br />
             <a href="{{ route('cart.buy') }}">@lang('cart.buy')</a>
             <br /><br />
-            <a href="{{ route('cart.removeAll') }}">@lang('cart.remove')</a>
+            <a href="{{ route('cart.removeAll') }}">@lang('cart.removeAll')</a>
         </div>
     </div>
 </div>

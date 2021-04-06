@@ -18,6 +18,7 @@ class CartController extends Controller
         $listProductsInCart = [];
         $total = 0;
         $ids = $request->session()->get('seeds');
+        
 
         if ($ids) {
             $listProductsInCart = Seed::findMany(array_keys($ids));
@@ -46,6 +47,15 @@ class CartController extends Controller
     public function removeAll(Request $request)
     {
         $request->session()->forget('seeds');
+
+        return back();
+    }
+
+    public function remove($id, Request $request)
+    {
+        $seeds = $request->session()->get('seeds');
+        unset($seeds[$id]);
+        session(['seeds' => $seeds]);
 
         return back();
     }
