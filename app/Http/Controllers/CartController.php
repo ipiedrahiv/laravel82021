@@ -41,7 +41,7 @@ class CartController extends Controller
         $seeds[$id] = $quantity;
         $request->session()->put('seeds', $seeds);
 
-        return back();
+        return back()->with('success', 'Successfuly Added!');
     }
 
     public function removeAll(Request $request)
@@ -57,7 +57,7 @@ class CartController extends Controller
         unset($seeds[$id]);
         session(['seeds' => $seeds]);
 
-        return back();
+        return back()->with('success', 'Successfuly Remove!');
     }
 
     public function buy(Request $request)

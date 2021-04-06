@@ -23,6 +23,7 @@ Route::post('/admin/seed/save', 'App\Http\Controllers\AdminHomeController@save')
 Route::get('/admin/seed/list', 'App\Http\Controllers\AdminHomeController@listAll')->name('admin.list');
 Route::get('/admin/seed/show/{id}/delete', 'App\Http\Controllers\AdminHomeController@delete')->name('admin.delete');
 Route::get('/admin/seed/download', 'App\Http\Controllers\AdminHomeController@download')->name('admin.download');
+Route::get('/admin/order', 'App\Http\Controllers\AdminHomeController@order')->name('admin.order');
 
 Auth::routes();
 
