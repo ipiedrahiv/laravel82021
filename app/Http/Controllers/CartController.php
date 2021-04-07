@@ -18,6 +18,7 @@ class CartController extends Controller
         $listProductsInCart = [];
         $total = 0;
         $ids = $request->session()->get('seeds');
+        
 
         if ($ids) {
             $listProductsInCart = Seed::findMany(array_keys($ids));
@@ -40,7 +41,7 @@ class CartController extends Controller
         $seeds[$id] = $quantity;
         $request->session()->put('seeds', $seeds);
 
-        return back();
+        return back()->with('success', 'Successfuly Added!');
     }
 
     public function removeAll(Request $request)
@@ -48,6 +49,15 @@ class CartController extends Controller
         $request->session()->forget('seeds');
 
         return back();
+    }
+
+    public function remove($id, Request $request)
+    {
+        $seeds = $request->session()->get('seeds');
+        unset($seeds[$id]);
+        session(['seeds' => $seeds]);
+
+        return back()->with('success', 'Successfuly Remove!');
     }
 
     public function buy(Request $request)

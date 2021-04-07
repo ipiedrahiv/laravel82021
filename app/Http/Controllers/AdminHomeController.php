@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Seed;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -77,7 +78,7 @@ class AdminHomeController extends Controller
         $data = []; //What will be sent to the view
         $seed = Seed::findOrFail($id);
         $data['seed'] = $seed;
-        $data['title'] = 'Lista';
+        $data['title'] = 'List';
 
         return view('admin.show')->with('data', $data);
     }
@@ -85,10 +86,20 @@ class AdminHomeController extends Controller
     public function download()
     {
         $data = [];
-        $data['title'] = 'Providers List';
+        $data['title'] = 'Providers list';
         $products = Seed::all();
         $data['products'] = $products;
 
         return view('admin.download')->with('data', $data);
+    }
+
+    public function order()
+    {
+        $data = [];
+        $data['title'] = 'Orders from clients';
+        $orders = Order::all();
+        $data['orders'] = $orders;
+
+        return view('admin.order')->with('data', $data);
     }
 }

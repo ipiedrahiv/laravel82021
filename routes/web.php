@@ -23,6 +23,7 @@ Route::post('/admin/seed/save', 'App\Http\Controllers\AdminHomeController@save')
 Route::get('/admin/seed/list', 'App\Http\Controllers\AdminHomeController@listAll')->name('admin.list');
 Route::get('/admin/seed/show/{id}/delete', 'App\Http\Controllers\AdminHomeController@delete')->name('admin.delete');
 Route::get('/admin/seed/download', 'App\Http\Controllers\AdminHomeController@download')->name('admin.download');
+Route::get('/admin/order', 'App\Http\Controllers\AdminHomeController@order')->name('admin.order');
 
 Auth::routes();
 
@@ -36,6 +37,7 @@ Route::post('/store/query', 'App\Http\Controllers\SeedController@search')->name(
 Route::get('/cart/shop', 'App\Http\Controllers\CartController@shop')->name('cart.shop');
 Route::get('/cart/buy', 'App\Http\Controllers\CartController@buy')->name('cart.buy');
 Route::get('/cart/removeAll/', 'App\Http\Controllers\CartController@removeAll')->name('cart.removeAll');
+Route::get('/cart/remove/{id}', 'App\Http\Controllers\CartController@remove')->name('cart.remove');
 Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name('cart.add');
 
 //ORDER
