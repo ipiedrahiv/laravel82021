@@ -1,3 +1,4 @@
+<!-- Santiago Santacruz-->
 @extends('admin.index')
 
 @section("title", $data["title"])
