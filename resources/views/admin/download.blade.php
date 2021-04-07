@@ -1,8 +1,9 @@
-@extends('layouts.app')
+@extends('admin.index')
 
 @section("title", $data["title"])
 
 @section('content')
+    @parent
 
 <div class="container">
     <div class="row justify-content-center">
