@@ -1,3 +1,4 @@
+<!-- Isabel Piedrahita -->
 @extends('admin.index')
 
 @section("title", $data["seed"]->getName())
