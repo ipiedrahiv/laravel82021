@@ -21,8 +21,9 @@ class SeedController extends Controller
     public function listAll()
     {
         $data = [];
-        $data['title'] = 'Created seeds';
+        $data['title'] = 'Store';
         $data['seeds'] = Seed::all()->sortBy('id');
+        $data['fromSearch'] = 'False';
 
         return view('seed.list')->with('data', $data);
     }
@@ -32,13 +33,14 @@ class SeedController extends Controller
         $searchTerm = $request->input('query');
 
         $data = [];
-        $data['title'] = 'This is what we found:';
+        $data['title'] = 'Search';
         $data['seeds'] = Seed::query()
                             ->where('name', 'LIKE', "%{$searchTerm}%")
                             ->orWhere('seller', 'LIKE', "%{$searchTerm}%")
                             ->orWhere('price', 'LIKE', "%{$searchTerm}%")
                             ->orWhere('categories', 'LIKE', "%{$searchTerm}%")
                             ->orWhere('keywords', 'LIKE', "%{$searchTerm}%")->get();
+        $data['fromSearch'] = 'True';
 
         return view('seed.list')->with('data', $data);
     }

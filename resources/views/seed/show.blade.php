@@ -8,6 +8,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+        @include('util.message')
             <div class="card">
                 <div class="card-header">{{ $data["seed"]->getName() }}</div>
                 <div class="card-body">
@@ -22,7 +23,7 @@
             <br /><br />
             <form method="POST" action="{{ route('cart.add',['id' => $data['seed']->getId()])}}">
                 @csrf
-                <input  placeholder="Quantity" required type="number" name="quantity" value="1" min="1" max="100" step="1"/>
+                <input  placeholder="Quantity" required type="number" name="quantity" value="{{ old('quantity') }}" min="1" max="{{ $data["seed"]->getStock() }}" step="1" onkeydown="return false"/>
                 <input type="submit" value ="@lang('seed.add')" >
             </form>
             <div class="divider-custom divider-dark">

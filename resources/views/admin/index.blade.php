@@ -12,7 +12,9 @@
                    <br /><br />
                    <a href="{{route('admin.create')}}">@lang('admin.create')</a>
                    <br /><br />
-                   <a href="{{route('admin.list')}}">@lang('admin.deleteSeed')</a>
+                   <a href="{{route('admin.list')}}">@lang('admin.list')</a>
+                   <br /><br />
+                   <a href="{{route('admin.order')}}">@lang('admin.orderList')</a>
                    <br /><br />
                    <a href="{{route('admin.download')}}">@lang('admin.listProviders')</a>
                 </div>
