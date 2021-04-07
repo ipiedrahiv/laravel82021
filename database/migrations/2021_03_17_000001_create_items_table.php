@@ -1,5 +1,5 @@
-// Santiago Santacruz
 <?php
+// Santiago Santacruz
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
