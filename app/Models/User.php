@@ -1,4 +1,6 @@
 <?php
+// Isabel Piedrahita
+// Santiago Santacruz
 
 namespace App\Models;
 
