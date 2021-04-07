@@ -1,4 +1,6 @@
 <?php
+// Santiago Santacruz
+// Isabel Piedrahita
 
 return [
     'store' => 'Store',
