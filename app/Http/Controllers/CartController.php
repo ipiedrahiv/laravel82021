@@ -1,5 +1,7 @@
 <?php
 
+// Santiago Santacruz
+
 namespace App\Http\Controllers;
 
 use App\Models\Item;
@@ -56,7 +58,7 @@ class CartController extends Controller
         unset($seeds[$id]);
         session(['seeds' => $seeds]);
 
-        return back()->with('success', __('messages.success'));
+        return back()->with('success', __('messages.remove'));
     }
 
     public function buy(Request $request)

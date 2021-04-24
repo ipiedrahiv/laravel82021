@@ -1,5 +1,7 @@
 <?php
 
+// Santiago Santacruz
+
 return [
     'cart' => 'Cart',
     'productsCart' => 'Products in cart :',

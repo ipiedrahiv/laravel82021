@@ -1,3 +1,4 @@
+<!-- Isabel Piedrahita -->
 @extends('layouts.app')
 
 @section("title", $data["title"])
@@ -13,18 +14,27 @@
                     <input type="text" name="query" value="{{ old('query') }}"/>
                     <input type="submit" value ="@lang('seed.search')" >
                 </form>
+                @if($data["fromSearch"] == "True")
+                    <a class="nav-link" href="{{route('seed.list')}}"> @lang('seed.returnFromSearch') </a>
+                @endif
+                <br/>
+                <p>@lang('seed.outOfStock')</p>
+                <p style="color:red;">@lang('seed.example')</p>
                 @foreach($data["seeds"] as $seed)
-                    <li class="nav-item">
-                        <a>
-                            @if($seed->getStock() != 0)
-                                <a class="nav-link" href="{{route('seed.show',$seed->getId())}}"> {{ $seed->getName()}}: </a>
-                            @else
-                                <a class="nav-link" href="{{route('seed.show',$seed->getId())}}" style="color:red;"> {{ $seed->getName()}}: </a>
-                            @endif
+                <div class="card">
+                    <div class="card-header">
+                        @if($seed->getStock() != 0)
+                            <a class="nav-link" href="{{route('seed.show',$seed->getId())}}"> {{ $seed->getName()}}: </a>
+                        @else
+                            <a class="nav-link" href="{{route('seed.show',$seed->getId())}}" style="color:red;"> {{ $seed->getName()}}: </a>
+                        @endif
+                    </div>
+                    <div class="card-body">
                                 @lang('seed.seller') {{ $seed->getSeller() }}<br/>
                                 @lang('seed.price') {{ $seed->getPrice() }}<br/>
-                        </a>
-                    </li>
+                    </div>
+                </div>
+                <br/>
                 @endforeach
             </ul>
         </div>

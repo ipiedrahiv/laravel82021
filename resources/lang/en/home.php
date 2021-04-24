@@ -1,5 +1,7 @@
 <?php
 
+// Santiago Santacruz
+
 return [
     'home' => 'Home',
     'menu' => 'Menu',

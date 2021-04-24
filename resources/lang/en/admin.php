@@ -1,5 +1,8 @@
 <?php
 
+// Santiago Santacruz
+// Isabel Piedrahita
+
 return [
     'admin' => 'Admin',
     'welcome' => 'Welcome to the admin page',

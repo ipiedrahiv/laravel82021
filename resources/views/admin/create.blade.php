@@ -1,4 +1,4 @@
-@extends('layouts.app')
+<!-- Isabel Piedrahita -->
 @extends('admin.index')
 
 @section("title", $data["title"])

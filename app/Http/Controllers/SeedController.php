@@ -1,5 +1,7 @@
 <?php
 
+// Isabel Piedrahita
+
 namespace App\Http\Controllers;
 
 use App\Models\Seed;
@@ -23,6 +25,7 @@ class SeedController extends Controller
         $data = [];
         $data['title'] = __('seed.created');
         $data['seeds'] = Seed::all()->sortBy('id');
+        $data['fromSearch'] = 'False';
 
         return view('seed.list')->with('data', $data);
     }
@@ -39,6 +42,7 @@ class SeedController extends Controller
                             ->orWhere('price', 'LIKE', "%{$searchTerm}%")
                             ->orWhere('categories', 'LIKE', "%{$searchTerm}%")
                             ->orWhere('keywords', 'LIKE', "%{$searchTerm}%")->get();
+        $data['fromSearch'] = 'True';
 
         return view('seed.list')->with('data', $data);
     }

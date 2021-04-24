@@ -1,4 +1,4 @@
-@extends('layouts.app')
+<!-- Isabel Piedrahita -->
 @extends('admin.index')
 
 @section("title", $data["title"])
@@ -7,7 +7,6 @@
     @parent
 
 <div class="container">
-
     <div class="row p-5">
         <div class="col-md-12">
             <ul id="errors">
@@ -28,7 +27,6 @@
                                 <button class="button">
                                     <a href="{{route('admin.delete', $seed->getId())}}">@lang('admin.delete')</a>
                                 </button>
-
                         </a>
                     </li>
                 @endforeach
