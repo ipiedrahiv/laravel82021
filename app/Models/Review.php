@@ -31,36 +31,6 @@ class Review extends Model
         $this->attributes['id'] = $id;
     }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function getUserId()
-    {
-        return $this->attributes['user_id'];
-    }
-
-    public function setUserId($user_id)
-    {
-        $this->attributes['user_id'] = $user_id;
-    }
-
-    public function seed()
-    {
-        return $this->belongsTo(Seed::class);
-    }
-
-    public function getSeedId()
-    {
-        return $this->attributes['seed_id'];
-    }
-
-    public function setSeedId($seed_id)
-    {
-        $this->attributes['seed_id'] = $seed_id;
-    }
-
     public function getRating()
     {
         return $this->attributes['rating'];
@@ -89,5 +59,35 @@ class Review extends Model
     public function setImage($image)
     {
         $this->attributes['image'] = $image;
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function getUserId()
+    {
+        return $this->attributes['user_id'];
+    }
+
+    public function setUserId($user_id)
+    {
+        $this->attributes['user_id'] = $user_id;
+    }
+
+    public function seed()
+    {
+        return $this->belongsTo(Seed::class);
+    }
+
+    public function getSeedId()
+    {
+        return $this->attributes['seed_id'];
+    }
+
+    public function setSeedId($seed_id)
+    {
+        $this->attributes['seed_id'] = $seed_id;
     }
 }

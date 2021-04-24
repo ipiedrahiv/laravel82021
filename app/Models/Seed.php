@@ -107,16 +107,6 @@ class Seed extends Model
         $this->attributes['quantity'] = $quantity;
     }
 
-    public function items()
-    {
-        return $this->hasMany(Item::class);
-    }
-
-    public function reviews()
-    {
-        return $this->hasMany(Review::class);
-    }
-
     public function getImage()
     {
         return $this->attributes['image'];
@@ -125,5 +115,15 @@ class Seed extends Model
     public function setImage($image)
     {
         $this->attributes['image'] = $image;
+    }
+
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 }

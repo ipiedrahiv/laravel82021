@@ -13,12 +13,11 @@ class CartController extends Controller
     public function shop(Request $request)
     {
         $data = []; //to be sent to the view
-        $data['title'] = 'Store seeds';
+        $data['title'] = __('cart.store');
 
         $listProductsInCart = [];
         $total = 0;
         $ids = $request->session()->get('seeds');
-        
 
         if ($ids) {
             $listProductsInCart = Seed::findMany(array_keys($ids));
@@ -41,7 +40,7 @@ class CartController extends Controller
         $seeds[$id] = $quantity;
         $request->session()->put('seeds', $seeds);
 
-        return back()->with('success', 'Successfuly Added!');
+        return back()->with('success', __('messages.success'));
     }
 
     public function removeAll(Request $request)
@@ -57,13 +56,13 @@ class CartController extends Controller
         unset($seeds[$id]);
         session(['seeds' => $seeds]);
 
-        return back()->with('success', 'Successfuly Remove!');
+        return back()->with('success', __('messages.success'));
     }
 
     public function buy(Request $request)
     {
         $data = []; //to be sent to the view
-        $data['title'] = 'Buy';
+        $data['title'] = __('cart.buy');
         $id = Auth::id();
         $order = new Order();
         $order->setUserId($id);

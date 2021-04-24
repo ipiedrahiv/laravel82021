@@ -29,6 +29,11 @@ class Order extends Model
         $this->attributes['total'] = $total;
     }
 
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
     public function getUserId()
     {
         return $this->attributes['user_id'];
@@ -37,11 +42,6 @@ class Order extends Model
     public function setUserId($user_id)
     {
         $this->attributes['user_id'] = $user_id;
-    }
-
-    public function user()
-    {
-        return $this->hasOne(User::class);
     }
 
     public function items()

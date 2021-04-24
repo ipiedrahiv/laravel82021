@@ -45,6 +45,11 @@ class User extends Authenticatable
         return $this->attributes['role'];
     }
 
+    public function setRole($role)
+    {
+        $this->attributes['role'] = $role;
+    }
+
     public function getId()
     {
         return $this->attributes['id'];
@@ -55,14 +60,19 @@ class User extends Authenticatable
         $this->attributes['id'] = $id;
     }
 
-    public function reviewsOrder()
-    {
-        return $this->hasMany(Order::class);
-    }
-
     public function getName()
     {
         return $this->attributes['name'];
+    }
+
+    public function setName($name)
+    {
+        $this->attributes['name'] = $name;
+    }
+
+    public function reviewsOrder()
+    {
+        return $this->hasMany(Order::class);
     }
 
     public function reviews()

@@ -12,7 +12,7 @@ class OrderController extends Controller
         $data = []; //What will be sent to the view
         $order = Order::with('items')->find($id);
         $data['order'] = $order;
-        $data['title'] = 'Lista';
+        $data['title'] = __('order.list');
 
         return view('order.show')->with('data', $data);
     }
@@ -21,7 +21,7 @@ class OrderController extends Controller
     {
         $id = Auth::user()->getId();
         $data = [];
-        $data['title'] = 'Created orders';
+        $data['title'] = __('order.created');
         $data['orders'] = Order::where('user_id', $id)->get();
 
         return view('order.index')->with('data', $data);
@@ -30,7 +30,7 @@ class OrderController extends Controller
     public function download($id)
     {
         $data = [];
-        $data['title'] = 'Factura';
+        $data['title'] = __('order.receipt');
         $order = Order::with('items')->find($id);
         $data['order'] = $order;
 
