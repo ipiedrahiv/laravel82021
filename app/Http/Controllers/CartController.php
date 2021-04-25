@@ -65,6 +65,7 @@ class CartController extends Controller
     {
         $data = []; //to be sent to the view
         $data['title'] = __('cart.buy');
+
         $id = Auth::id();
         $order = new Order();
         $order->setUserId($id);

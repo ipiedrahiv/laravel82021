@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    //attributes id, subtotal, quantity, product_id, order_id, created_at, updated_at
+    //attributes id, subtotal, quantity, created_at, updated_at, product_id, order_id,
     protected $fillable = ['subtotal', 'quantity', 'product_id', 'order_id'];
 
     public function getId()

@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 
 class Review extends Model
 {
-    //Attributes: id, user, seed, rating, comment, image, created_at, updated_at
-    protected $fillable = ['rating', 'comment', 'user_id', 'seed_id', 'image'];
+    //Attributes: id, rating, comment, image, created_at, updated_at, user_id, seed_id
+    protected $fillable = ['rating', 'comment', 'image', 'user_id', 'seed_id'];
 
     public static function validateForm(Request $request)
     {

@@ -57,7 +57,7 @@ class AdminHomeController extends Controller
         $seed->setImage($imageName);
         $seed->save();
 
-        return back()->with('success', 'Successfuly created!');
+        return back()->with('success', __('messages.success'));
     }
 
     public function delete($id)

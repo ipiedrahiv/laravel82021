@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    //attributes id, total, created_at, updated_at
-    protected $fillable = ['total'];
+    //attributes id, total, created_at, updated_at, user_id
+    protected $fillable = ['total', 'user_id'];
 
     public function getId()
     {
