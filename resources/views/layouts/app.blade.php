@@ -63,6 +63,9 @@
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
+                @section('breadcrumbs')
+                    {{ Breadcrumbs::render('home') }}
+                @endsection
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">@lang('home.website')</p>
             </div>
