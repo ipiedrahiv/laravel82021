@@ -5,7 +5,7 @@
 
 @section('content')
     @parent
-
+{{ Breadcrumbs::render('listAdmin') }}
 <div class="container">
     <div class="row p-5">
         <div class="col-md-12">

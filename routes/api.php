@@ -17,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/seeds', 'App\Http\Controllers\Api\SeedApi@index')->name('api.seed.index');
+Route::get('/seeds/{id}', 'App\Http\Controllers\Api\SeedApi@show')->name('api.seed.show');
