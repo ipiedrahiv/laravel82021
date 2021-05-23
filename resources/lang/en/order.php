@@ -1,4 +1,5 @@
 <?php
+
 // Santiago Santacruz
 
 return [
@@ -13,5 +14,7 @@ return [
     'print' => 'Print',
     'download' => 'Download',
     'open' => 'Open',
+    'list' => 'List',
+    'created' => 'Created orders',
 
 ];

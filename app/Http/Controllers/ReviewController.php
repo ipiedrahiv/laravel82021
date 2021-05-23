@@ -1,4 +1,5 @@
 <?php
+
 // Isabel Piedrahita
 
 namespace App\Http\Controllers;
@@ -11,7 +12,7 @@ class ReviewController extends Controller
     public function create()
     {
         $data = [];
-        $data['title'] = 'Write comment';
+        $data['title'] = __('seed.write');
 
         return view('seed.show')->with('data', $data);
     }
@@ -35,6 +36,6 @@ class ReviewController extends Controller
 
         $review->save();
 
-        return back()->with('success', 'Successfuly uploaded!');
+        return back()->with('success', __('messages.success'));
     }
 }

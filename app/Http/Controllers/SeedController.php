@@ -1,4 +1,5 @@
 <?php
+
 // Isabel Piedrahita
 
 namespace App\Http\Controllers;
@@ -13,7 +14,7 @@ class SeedController extends Controller
         $data = []; //What will be sent to the view
         $seed = Seed::findOrFail($id);
         $data['seed'] = $seed;
-        $data['title'] = 'Lista';
+        $data['title'] = __('seed.list');
         $data['quantity'] = 0;
 
         return view('seed.show')->with('data', $data);
@@ -22,7 +23,7 @@ class SeedController extends Controller
     public function listAll()
     {
         $data = [];
-        $data['title'] = 'Store';
+        $data['title'] = __('seed.created');
         $data['seeds'] = Seed::all()->sortBy('id');
         $data['fromSearch'] = 'False';
 
@@ -34,7 +35,7 @@ class SeedController extends Controller
         $searchTerm = $request->input('query');
 
         $data = [];
-        $data['title'] = 'Search';
+        $data['title'] = __('seed.foundItem');
         $data['seeds'] = Seed::query()
                             ->where('name', 'LIKE', "%{$searchTerm}%")
                             ->orWhere('seller', 'LIKE', "%{$searchTerm}%")

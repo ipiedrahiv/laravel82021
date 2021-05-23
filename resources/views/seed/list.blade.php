@@ -4,7 +4,7 @@
 @section("title", $data["title"])
 
 @section('content')
-
+{{ Breadcrumbs::render('list') }}
 <div class="container">
     <div class="row p-5">
         <div class="col-md-12">

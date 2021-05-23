@@ -2,6 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
+{{ Breadcrumbs::render('shop') }}
 <br/><br/>
 <div class="container">
     <div class="row justify-content-center">

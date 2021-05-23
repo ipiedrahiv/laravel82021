@@ -5,6 +5,8 @@
 
 @section('content')
 
+{{ Breadcrumbs::render('order.show', $data["order"]->getId()) }}
+
 </br></br>
 <div class="container" id="principal">
     <div class="row justify-content-center">
