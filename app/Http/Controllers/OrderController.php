@@ -34,7 +34,9 @@ class OrderController extends Controller
         $data = [];
         $data['title'] = __('order.receipt');
         $order = Order::with('items')->find($id);
+        $user = Order::with('user');
         $data['order'] = $order;
+        $data['user'] = $user;
 
         return view('order.download')->with('data', $data);
     }

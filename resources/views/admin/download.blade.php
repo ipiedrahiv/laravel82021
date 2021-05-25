@@ -29,7 +29,9 @@
                     </tr>
                 @endforeach
             </table>
-            <button type="button" class="excel" onclick="tableToExcel('ordertable', 'Orders')">@lang('admin.excel')</button>
+            <div class="parent-container">
+            <h3 class="pdf-name">@lang('admin.excel')</h3><button type="button" class="open-pdf"  onclick="tableToExcel('ordertable', 'Orders')">@lang('admin.excel')</button>
+            </div>
         </div>
     </div>
 </div>

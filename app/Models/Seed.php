@@ -26,6 +26,7 @@ class Seed extends Model
             'stock'=>'required|numeric|min:0',
             'categories'=>'required',
             'keywords'=>'required',
+            'image' => 'required',
         ]);
     }
 
