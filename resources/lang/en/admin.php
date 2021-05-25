@@ -11,6 +11,6 @@ return [
     'delete' => 'Delete',
     'excel' => 'Download excel',
     'orderList' => 'List of orders from clients',
-    'listProviders' =>'Providers List',
+    'listSeller' =>'Seller List',
 
 ];

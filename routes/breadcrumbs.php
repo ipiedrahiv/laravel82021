@@ -59,7 +59,7 @@ Breadcrumbs::for('create', function ($trail) {
 
 Breadcrumbs::for('download', function ($trail) {
     $trail->parent('admin');
-    $trail->push(__('admin.listProviders'), route('admin.download'));
+    $trail->push(__('admin.listSeller'), route('admin.download'));
 });
 
 Breadcrumbs::for('listAdmin', function ($trail) {
