@@ -2,11 +2,16 @@
 
 // Santiago Santacruz
 
+// Santiago Santacruz
+
+// Santiago Santacruz
+
 namespace App\Http\Controllers;
 
 use App\Models\Item;
 use App\Models\Order;
 use App\Models\Seed;
+use App\Notifications\OrderProcessed;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -89,6 +94,8 @@ class CartController extends Controller
 
         $order->setTotal($total);
         $order->save();
+
+        $request->user()->notify(new OrderProcessed($order));
 
         return view('cart.buy')->with('data', $data);
     }

@@ -2,6 +2,10 @@
 
 // Santiago Santacruz
 
+// Santiago Santacruz
+
+// Santiago Santacruz
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
