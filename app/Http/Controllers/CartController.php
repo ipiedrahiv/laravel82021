@@ -10,6 +10,7 @@ use App\Models\Order;
 use App\Models\Seed;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\OrderProcessed;
 
 class CartController extends Controller
 {
@@ -90,6 +91,8 @@ class CartController extends Controller
 
         $order->setTotal($total);
         $order->save();
+
+        $request->user()->notify(new OrderProcessed($order));
 
         return view('cart.buy')->with('data', $data);
     }

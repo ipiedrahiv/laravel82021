@@ -24,6 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
         'role',
     ];
 
@@ -76,6 +77,16 @@ class User extends Authenticatable
         $this->attributes['name'] = $name;
     }
 
+    public function getPhone()
+    {
+        return $this->attributes['phone'];
+    }
+
+    public function setPhone($phone)
+    {
+        $this->attributes['phone'] = $phone;
+    }
+
     public function reviewsOrder()
     {
         return $this->hasMany(Order::class);
@@ -85,4 +96,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(Review::class);
     }
+
+
 }

@@ -3,6 +3,7 @@ namespace App\Channels;
 
 use Illuminate\Notifications\Notification;
 use Twilio\Rest\Client;
+use Illuminate\Support\Facades\Auth;
 
 class WhatsAppChannel
 {
@@ -11,7 +12,7 @@ class WhatsAppChannel
         $message = $notification->toWhatsApp($notifiable);
 
 
-        $to = $notifiable->routeNotificationFor('WhatsApp');
+        $to = Auth::user()->getPhone();
         $from = config('services.twilio.whatsapp_from');
 
 
