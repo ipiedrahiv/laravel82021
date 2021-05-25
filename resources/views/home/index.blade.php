@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+{{ Breadcrumbs::render('home') }}
 <section class="page-section goShop" id="goShop">
     <div class="container">
         <div class="row">

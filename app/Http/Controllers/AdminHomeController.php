@@ -2,6 +2,9 @@
 // Isabel Piedrahita
 // Santiago Santacruz
 
+// Isabel Piedrahita
+// Santiago Santacruz
+
 namespace App\Http\Controllers;
 
 use App\Models\Order;
@@ -31,7 +34,7 @@ class AdminHomeController extends Controller
     public function create()
     {
         $data = [];
-        $data['title'] = 'Create seed';
+        $data['title'] = __('admin.create');
 
         return view('admin.create')->with('data', $data);
     }
@@ -56,7 +59,7 @@ class AdminHomeController extends Controller
         $seed->setImage($imageName);
         $seed->save();
 
-        return back()->with('success', 'Successfuly created!');
+        return back()->with('success', __('messages.success'));
     }
 
     public function delete($id)
@@ -69,7 +72,7 @@ class AdminHomeController extends Controller
     public function listAll()
     {
         $data = [];
-        $data['title'] = 'Created seeds';
+        $data['title'] = __('admin.create');
         $data['seeds'] = Seed::all()->sortBy('id');
 
         return view('admin.list')->with('data', $data);
@@ -80,7 +83,7 @@ class AdminHomeController extends Controller
         $data = []; //What will be sent to the view
         $seed = Seed::findOrFail($id);
         $data['seed'] = $seed;
-        $data['title'] = 'List';
+        $data['title'] = __('admin.list');
 
         return view('admin.show')->with('data', $data);
     }
@@ -88,7 +91,7 @@ class AdminHomeController extends Controller
     public function download()
     {
         $data = [];
-        $data['title'] = 'Providers list';
+        $data['title'] = __('admin.listProviders');
         $products = Seed::all();
         $data['products'] = $products;
 
@@ -98,7 +101,7 @@ class AdminHomeController extends Controller
     public function order()
     {
         $data = [];
-        $data['title'] = 'Orders from clients';
+        $data['title'] = __('admin.orderList');
         $orders = Order::all();
         $data['orders'] = $orders;
 

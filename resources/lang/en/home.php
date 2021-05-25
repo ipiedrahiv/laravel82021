@@ -1,9 +1,14 @@
 <?php
 // Santiago Santacruz
 
+// Santiago Santacruz
+
 return [
     'home' => 'Home',
     'menu' => 'Menu',
+    'en' => 'EN',
+    'es' => 'ES',
+    'de' => 'DE',
     'website' => 'The best place to get your seeds!',
     'matilda' => 'Matilda la Matita',
     'store' => 'Store',

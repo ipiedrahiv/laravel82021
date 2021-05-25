@@ -34,6 +34,7 @@
                     @guest
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                        
                         @else
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('cart.shop') }}">@lang('cart.cart')</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('order.index') }}">@lang('order.order')</a></li>
@@ -44,6 +45,9 @@
                             @csrf
                         </form>
                     @endguest
+                    
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('lang.setting','en') }}"> @lang('home.en')</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('lang.setting','es') }}">@lang('home.es')</a></li>    
                     </ul>
                 </div>
             </div>
@@ -59,6 +63,9 @@
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
+                @section('breadcrumbs')
+                    {{ Breadcrumbs::render('home') }}
+                @endsection
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">@lang('home.website')</p>
             </div>

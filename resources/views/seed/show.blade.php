@@ -4,7 +4,7 @@
 @section("title", $data["title"])
 
 @section('content')
-
+{{ Breadcrumbs::render('show') }}
 <br/><br/>
 <div class="container">
     <div class="row justify-content-center">

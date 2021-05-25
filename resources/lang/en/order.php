@@ -1,6 +1,8 @@
 <?php
 // Santiago Santacruz
 
+// Santiago Santacruz
+
 return [
     'order' => 'Order',
     'id' => 'Order id :',
@@ -13,5 +15,7 @@ return [
     'print' => 'Print',
     'download' => 'Download',
     'open' => 'Open',
+    'list' => 'List',
+    'created' => 'Created orders',
 
 ];

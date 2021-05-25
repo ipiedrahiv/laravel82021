@@ -2,6 +2,9 @@
 // Isabel Piedrahita
 // Santiago Santacruz
 
+// Isabel Piedrahita
+// Santiago Santacruz
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -21,6 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -47,6 +51,11 @@ class User extends Authenticatable
         return $this->attributes['role'];
     }
 
+    public function setRole($role)
+    {
+        $this->attributes['role'] = $role;
+    }
+
     public function getId()
     {
         return $this->attributes['id'];
@@ -57,14 +66,19 @@ class User extends Authenticatable
         $this->attributes['id'] = $id;
     }
 
-    public function reviewsOrder()
-    {
-        return $this->hasMany(Order::class);
-    }
-
     public function getName()
     {
         return $this->attributes['name'];
+    }
+
+    public function setName($name)
+    {
+        $this->attributes['name'] = $name;
+    }
+
+    public function reviewsOrder()
+    {
+        return $this->hasMany(Order::class);
     }
 
     public function reviews()
