@@ -12,7 +12,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"> @lang('order.id'){{$data["order"]->getId() }}</div>
+                <div class="card-header"> @lang('order.id'){{$data["order"]->getId() }} </div>
                 <div class="card-body">
                     @foreach($data["order"]->items as $item)
                         @lang('order.product') {{ $item->getProductId() }} - @lang('order.quantity') {{ $item->getQuantity()}} - @lang('order.subtotal') {{ $item->getSubTotal()}} <br />

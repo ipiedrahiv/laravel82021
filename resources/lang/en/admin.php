@@ -1,4 +1,8 @@
 <?php
+
+// Santiago Santacruz
+// Isabel Piedrahita
+
 // Santiago Santacruz
 // Isabel Piedrahita
 
@@ -13,6 +17,6 @@ return [
     'delete' => 'Delete',
     'excel' => 'Download excel',
     'orderList' => 'List of orders from clients',
-    'listProviders' =>'Providers List',
+    'listSeller' =>'Seller List',
 
 ];

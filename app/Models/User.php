@@ -1,4 +1,8 @@
 <?php
+
+// Isabel Piedrahita
+// Santiago Santacruz
+
 // Isabel Piedrahita
 // Santiago Santacruz
 
@@ -24,7 +28,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'phone',
         'role',
     ];
 
@@ -47,16 +50,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getRole()
-    {
-        return $this->attributes['role'];
-    }
-
-    public function setRole($role)
-    {
-        $this->attributes['role'] = $role;
-    }
-
     public function getId()
     {
         return $this->attributes['id'];
@@ -77,6 +70,36 @@ class User extends Authenticatable
         $this->attributes['name'] = $name;
     }
 
+    public function getEmail()
+    {
+        return $this->attributes['email'];
+    }
+
+    public function setEmail($email)
+    {
+        $this->attributes['email'] = $email;
+    }
+
+    public function getPassword()
+    {
+        return $this->attributes['password'];
+    }
+
+    public function setPassword($password)
+    {
+        $this->attributes['password'] = $password;
+    }
+
+    public function getRole()
+    {
+        return $this->attributes['role'];
+    }
+
+    public function setRole($role)
+    {
+        $this->attributes['role'] = $role;
+    }
+
     public function getPhone()
     {
         return $this->attributes['phone'];
@@ -87,7 +110,7 @@ class User extends Authenticatable
         $this->attributes['phone'] = $phone;
     }
 
-    public function reviewsOrder()
+    public function orders()
     {
         return $this->hasMany(Order::class);
     }
@@ -96,6 +119,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Review::class);
     }
-
-
 }
