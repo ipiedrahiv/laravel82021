@@ -3,6 +3,7 @@
 @extends('layouts.app')
 
 @section('content')
+{{ Breadcrumbs::render('admin') }}
 
 <div class="container">
     <div class="row justify-content-center">

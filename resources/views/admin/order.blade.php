@@ -5,6 +5,7 @@
 
 @section('content')
 
+{{ Breadcrumbs::render('orderAdmin') }}
 </br></br>
 <div class="container" id="principal">
     <div class="row justify-content-center">

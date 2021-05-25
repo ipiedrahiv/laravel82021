@@ -1,14 +1,16 @@
 <?php
 // Santiago Santacruz
 
+// Santiago Santacruz
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    //attributes id, total, created_at, updated_at
-    protected $fillable = ['total'];
+    //attributes id, total, created_at, updated_at, user_id
+    protected $fillable = ['total', 'user_id'];
 
     public function getId()
     {
@@ -30,6 +32,11 @@ class Order extends Model
         $this->attributes['total'] = $total;
     }
 
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
     public function getUserId()
     {
         return $this->attributes['user_id'];
@@ -38,11 +45,6 @@ class Order extends Model
     public function setUserId($user_id)
     {
         $this->attributes['user_id'] = $user_id;
-    }
-
-    public function user()
-    {
-        return $this->hasOne(User::class);
     }
 
     public function items()

@@ -2,6 +2,9 @@
 // Santiago Santacruz
 // Isabel Piedrahita
 
+// Santiago Santacruz
+// Isabel Piedrahita
+
 return [
     'admin' => 'Admin',
     'welcome' => 'Welcome to the admin page',

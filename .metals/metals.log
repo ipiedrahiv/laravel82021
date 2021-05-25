@@ -1,0 +1,5 @@
+[0m2021.05.02 15:56:34 INFO  Started: Metals version 0.10.2 in workspace 'E:\Programas\Xampp\htdocs\matilda_la_matita' for client vscode 1.55.2.[0m
+[0m2021.05.02 15:56:35 INFO  time: initialize in 1.2s[0m
+[0m2021.05.02 15:56:37 WARN  Build server is not auto-connectable.[0m
+[0m2021.05.02 15:56:37 WARN  no build tool detected in workspace 'E:\Programas\Xampp\htdocs\matilda_la_matita'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.05.02 18:23:55 INFO  shutting down Metals[0m

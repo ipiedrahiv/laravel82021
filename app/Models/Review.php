@@ -1,6 +1,8 @@
 <?php
 // Isabel Piedrahita
 
+// Isabel Piedrahita
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -8,8 +10,8 @@ use Illuminate\Http\Request;
 
 class Review extends Model
 {
-    //Attributes: id, user, seed, rating, comment, image, created_at, updated_at
-    protected $fillable = ['rating', 'comment', 'user_id', 'seed_id', 'image'];
+    //Attributes: id, rating, comment, image, created_at, updated_at, user_id, seed_id
+    protected $fillable = ['rating', 'comment', 'image', 'user_id', 'seed_id'];
 
     public static function validateForm(Request $request)
     {
@@ -30,36 +32,6 @@ class Review extends Model
     public function setId($id)
     {
         $this->attributes['id'] = $id;
-    }
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function getUserId()
-    {
-        return $this->attributes['user_id'];
-    }
-
-    public function setUserId($user_id)
-    {
-        $this->attributes['user_id'] = $user_id;
-    }
-
-    public function seed()
-    {
-        return $this->belongsTo(Seed::class);
-    }
-
-    public function getSeedId()
-    {
-        return $this->attributes['seed_id'];
-    }
-
-    public function setSeedId($seed_id)
-    {
-        $this->attributes['seed_id'] = $seed_id;
     }
 
     public function getRating()
@@ -90,5 +62,35 @@ class Review extends Model
     public function setImage($image)
     {
         $this->attributes['image'] = $image;
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function getUserId()
+    {
+        return $this->attributes['user_id'];
+    }
+
+    public function setUserId($user_id)
+    {
+        $this->attributes['user_id'] = $user_id;
+    }
+
+    public function seed()
+    {
+        return $this->belongsTo(Seed::class);
+    }
+
+    public function getSeedId()
+    {
+        return $this->attributes['seed_id'];
+    }
+
+    public function setSeedId($seed_id)
+    {
+        $this->attributes['seed_id'] = $seed_id;
     }
 }
