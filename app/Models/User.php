@@ -3,6 +3,12 @@
 // Isabel Piedrahita
 // Santiago Santacruz
 
+// Isabel Piedrahita
+// Santiago Santacruz
+
+// Isabel Piedrahita
+// Santiago Santacruz
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -22,6 +28,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
         'role',
     ];
 
@@ -44,16 +51,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getName()
-    {
-        return $this->attributes['name'];
-    }
-
-    public function setName($name)
-    {
-        $this->attributes['name'] = $name;
-    }
-
     public function getId()
     {
         return $this->attributes['id'];
@@ -62,6 +59,16 @@ class User extends Authenticatable
     public function setId($id)
     {
         $this->attributes['id'] = $id;
+    }
+
+    public function getName()
+    {
+        return $this->attributes['name'];
+    }
+
+    public function setName($name)
+    {
+        $this->attributes['name'] = $name;
     }
 
     public function getEmail()
@@ -92,6 +99,16 @@ class User extends Authenticatable
     public function setRole($role)
     {
         $this->attributes['role'] = $role;
+    }
+
+    public function getPhone()
+    {
+        return $this->attributes['phone'];
+    }
+
+    public function setPhone($phone)
+    {
+        $this->attributes['phone'] = $phone;
     }
 
     public function orders()
