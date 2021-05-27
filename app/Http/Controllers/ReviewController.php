@@ -8,9 +8,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Interfaces\ImageStorage;
 use App\Models\Review;
 use Illuminate\Http\Request;
-use App\Interfaces\ImageStorage;
 
 class ReviewController extends Controller
 {

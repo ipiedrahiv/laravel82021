@@ -1,19 +1,19 @@
 <?php
+
 // Isabel Piedrahita
 
 // Isabel Piedrahita
 
 namespace App\Http\Controllers;
+
 use GuzzleHttp\Client;
 
 class EcoProductsController extends Controller
 {
-
     public function apiWithoutKey()
     {
         $client = new Client(); //GuzzleHttp\Client
-        $url = "http://ec2-34-224-169-145.compute-1.amazonaws.com/public/ecoProductsJson";
-
+        $url = 'http://ec2-34-224-169-145.compute-1.amazonaws.com/public/ecoProductsJson';
 
         $response = $client->request('GET', $url, [
             'verify'  => false,
@@ -29,5 +29,4 @@ class EcoProductsController extends Controller
 
         return view('ecoproducts.list')->with('data', $data);
     }
-
 }

@@ -14,7 +14,6 @@ use App\Models\Seed;
 use App\Notifications\OrderProcessed;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Notifications\OrderProcessed;
 
 class CartController extends Controller
 {

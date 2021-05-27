@@ -177,7 +177,7 @@ return [
 
         /* my providers */
         App\Providers\ImageServiceProvider::class,
-        
+
     ],
 
     /*
