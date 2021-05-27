@@ -11,13 +11,13 @@
                     <div class="card-header">
                         Name: {{$item['name']}}<br/>
                     </div>
-                    ID: {{$item['id']}}<br/>
-                    Price: {{$item['price']}}<br/>
-                    Facts: {{$item['facts']}}<br/>
-                    Description: {{$item['description']}}<br/>
-                    Emision: {{$item['emision']}}<br/>
-                    Product Life: {{$item['product_life']}}<br/>
-                    Categories: {{$item['categories']}}<br/>
+                    @lang('ecoproducts.id') {{$item['id']}}<br/>
+                    @lang('ecoproducts.price') {{$item['price']}}<br/>
+                    @lang('ecoproducts.facts') {{$item['facts']}}<br/>
+                    @lang('ecoproducts.description') {{$item['description']}}<br/>
+                    @lang('ecoproducts.emision') {{$item['emision']}}<br/>
+                    @lang('ecoproducts.productLife') {{$item['product_life']}}<br/>
+                    @lang('ecoproducts.categories') {{$item['categories']}}<br/>
                     </div>
                     <br/><br/>
                 @endforeach
