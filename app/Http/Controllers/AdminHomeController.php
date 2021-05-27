@@ -11,6 +11,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Interfaces\ImageStorage;
 use App\Models\Order;
 use App\Models\Seed;
 use Illuminate\Http\Request;
@@ -47,12 +48,11 @@ class AdminHomeController extends Controller
     {
         Seed::validateForm($request);
 
-        $image = $request->file('image');
-        if ($request->hasFile('image')) {
-            $imageName = $image->getClientOriginalName();
-            $image->move(public_path().'/img/', $imageName);
-        }
+        $storeInterface = app(ImageStorage::class);
+        $storeInterface->store($request);
 
+        $image = $request->file('image');
+        $imageName = $image->getClientOriginalName();
         $seed = new Seed();
         $seed->setName($request->input('name'));
         $seed->setSeller($request->input('seller'));

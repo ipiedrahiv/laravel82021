@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Interfaces\ImageStorage;
 use App\Models\Review;
 use Illuminate\Http\Request;
 
@@ -25,12 +26,11 @@ class ReviewController extends Controller
     {
         Review::validateForm($request);
 
-        $image = $request->file('image');
-        if ($request->hasFile('image')) {
-            $imageName = $image->getClientOriginalName();
-            $image->move(public_path().'/img/', $imageName);
-        }
+        $storeInterface = app(ImageStorage::class);
+        $storeInterface->store($request);
 
+        $image = $request->file('image');
+        $imageName = $image->getClientOriginalName();
         $review = new Review();
         $review->setRating($request->input('rating'));
         $review->setComment($request->input('comment'));
