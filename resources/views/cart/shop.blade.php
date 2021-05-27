@@ -12,15 +12,15 @@
             <ul id="errors">
                 @foreach($data["seeds"] as $seed)
                     <li>
-                        {{ $seed->getId() }} - {{ $seed->getName() }} : {{ $seed->getPrice() }} - @lang('cart.quantity') {{$seed->getQuantity() }}  <a href="{{ route('cart.remove',['id' => $seed->getId()])}}">@lang('cart.remove')</a>
+                        {{ $seed->getId() }} - {{ $seed->getName() }} : {{ $seed->getPrice() }} - @lang('cart.quantity') {{$seed->getQuantity() }}  <a class="btn btn-primary btn-sm btn-lg active" href="{{ route('cart.remove',['id' => $seed->getId()])}}">@lang('cart.remove')</a><br /><br />
                     </li>
                 @endforeach
             </ul>
-            <br />
             @lang('cart.total') {{ $data['total'] }}<br /><br />
-            <a href="{{ route('cart.buy') }}">@lang('cart.buy')</a>
+            <a class="btn btn-primary btn-sm btn-lg active"href="{{ route('cart.buy') }}">@lang('cart.buy')</a>
             <br /><br />
-            <a href="{{ route('cart.removeAll') }}">@lang('cart.removeAll')</a>
+            <a class="btn btn-primary btn-sm btn-lg active" href="{{ route('cart.removeAll') }}">@lang('cart.removeAll')</a>
+            <br /><br />
         </div>
     </div>
 </div>

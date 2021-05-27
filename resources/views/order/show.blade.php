@@ -15,9 +15,13 @@
                 <div class="card-header"> @lang('order.id'){{$data["order"]->getId() }}</div>
                 <div class="card-body">
                     @foreach($data["order"]->items as $item)
-                    @lang('order.product') {{ $item->getProductId() }} - @lang('order.quantity') {{ $item->getQuantity()}} - @lang('order.subtotal') {{ $item->getSubTotal()}} <br />
-                    @endforeach
-                    @lang('order.total') {{$data["order"]->getTotal()}}
+                        @lang('seed.name') {{$item->product->getName()}} -
+                        @lang('order.product') {{ $item->getProductId() }} -
+                        @lang('order.quantity') {{ $item->getQuantity()}} -
+                        @lang('order.subtotal') {{ $item->getSubTotal()}} 
+                        </br></br>
+                        @endforeach
+                        @lang('order.total') {{$data["order"]->getTotal()}}  
                 </div>   
             </div>
         </div>
