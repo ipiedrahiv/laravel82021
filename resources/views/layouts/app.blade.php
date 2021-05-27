@@ -24,6 +24,7 @@
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="{{ route('home.index') }}">@lang('home.home')</a>
                 <a class="navbar-brand js-scroll-trigger" href="{{ route('seed.list') }}">@lang('home.store')</a>
+                <a class="navbar-brand js-scroll-trigger" href="{{ route('ecoproducts.list') }}">@lang('home.ecoproducts')</a>
                 <a class="navbar-brand js-scroll-trigger" href="{{ route('admin.home.index') }}">@lang('admin.admin')</a>
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     @lang('home.menu')
@@ -34,7 +35,7 @@
                     @guest
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">{{ __('Register') }}</a></li>
-                        
+
                         @else
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('cart.shop') }}">@lang('cart.cart')</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('order.index') }}">@lang('order.order')</a></li>
@@ -45,9 +46,9 @@
                             @csrf
                         </form>
                     @endguest
-                    
+
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('lang.setting','en') }}"> @lang('home.en')</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('lang.setting','es') }}">@lang('home.es')</a></li>    
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('lang.setting','es') }}">@lang('home.es')</a></li>
                     </ul>
                 </div>
             </div>

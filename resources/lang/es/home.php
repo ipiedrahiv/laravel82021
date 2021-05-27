@@ -22,5 +22,5 @@ return [
     'aboutMatilda' => 'Acerca de Matilda la Matita',
     'bestShop' => 'Es la mejor pagina de semillas!',
     'copyRight' => 'Copyright © Your Website 2020',
-
+    'ecoproducts' => 'EcoProductos',
 ];
