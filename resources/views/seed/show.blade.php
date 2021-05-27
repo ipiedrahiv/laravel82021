@@ -19,7 +19,8 @@
                     <b>@lang('seed.productCategories')</b> {{ $data["seed"]->getCategories() }}<br /><br />
                     <b>@lang('seed.productKeywords')</b> {{ $data["seed"]->getKeywords() }}<br /><br />
                     <b>@lang('seed.productImage')</b><br /><br />
-                    <img src="{{ URL::asset('storage/'.$data['seed']->getImage()) }}" />
+                    <img src="{{ URL::asset('storage/'.$data['seed']->getImage()) }}" width="400"
+     height="500"/>
                 </div>
             </div>
             <br /><br />
@@ -55,7 +56,8 @@
                 <div class="card-body">
                     {{ $review->getComment() }}
                     <br/><br/>
-                    <img src="{{ URL::asset('storage/'.$review->getImage()) }}" />
+                    <img src="{{ URL::asset('storage/'.$review->getImage()) }}" width="400"
+     height="500"/>
                 </div>
             </div>
             @endforeach
