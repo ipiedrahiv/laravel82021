@@ -1,4 +1,8 @@
 <?php
+
+// Isabel Piedrahita
+// Santiago Santacruz
+
 // Isabel Piedrahita
 // Santiago Santacruz
 
@@ -47,16 +51,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getName()
-    {
-        return $this->attributes['name'];
-    }
-
-    public function setName($name)
-    {
-        $this->attributes['name'] = $name;
-    }
-
     public function getId()
     {
         return $this->attributes['id'];
@@ -65,6 +59,16 @@ class User extends Authenticatable
     public function setId($id)
     {
         $this->attributes['id'] = $id;
+    }
+
+    public function getName()
+    {
+        return $this->attributes['name'];
+    }
+
+    public function setName($name)
+    {
+        $this->attributes['name'] = $name;
     }
 
     public function getEmail()
@@ -107,7 +111,7 @@ class User extends Authenticatable
         $this->attributes['phone'] = $phone;
     }
 
-    public function reviewsOrder()
+    public function orders()
     {
         return $this->hasMany(Order::class);
     }
