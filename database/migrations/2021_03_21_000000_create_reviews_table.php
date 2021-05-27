@@ -14,7 +14,7 @@ class CreateReviewsTable extends Migration
     public function up()
     {
         Schema::create('reviews', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->onDelete('cascade');
             $table->integer('rating');
             $table->text('comment');
             $table->bigInteger('user_id')->unsigned();

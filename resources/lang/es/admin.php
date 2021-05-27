@@ -10,6 +10,6 @@ return [
     'delete' => 'Borrar',
     'excel' => 'Descargar excel',
     'orderList' => 'Lista de ordenes de los clientes',
-    'listProviders' =>'Lista de proveedores',
+    'listSeller' =>'Lista de Almacen',
 
 ];

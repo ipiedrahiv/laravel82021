@@ -30,7 +30,7 @@
                 @endforeach
             </table>
             <div class="parent-container">
-            <h3 class="pdf-name">@lang('admin.excel')</h3><button type="button" class="open-pdf"  onclick="tableToExcel('ordertable', 'Orders')">@lang('admin.excel')</button>
+            <h3 class="pdf-name">@lang('admin.excel')</h3><a class="btn btn-primary btn-lg active" class="open-pdf"  onclick="tableToExcel('ordertable', 'Orders')">@lang('admin.excel')</a><br /><br />
             </div>
         </div>
     </div>
