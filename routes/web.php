@@ -58,3 +58,6 @@ Route::get('/order/download/{id}', 'App\Http\Controllers\OrderController@downloa
 // REVIEWS
 Route::get('/store/comment/create', 'App\Http\Controllers\ReviewController@create')->name('review.create');
 Route::post('/store/comment/save', 'App\Http\Controllers\ReviewController@save')->name('review.save');
+
+// ECOPRODUCTS
+Route::get('/ecoproducts', 'App\Http\Controllers\EcoProductsController@apiWithoutKey')->name('ecoproducts.list');
