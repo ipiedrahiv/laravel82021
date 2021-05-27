@@ -22,7 +22,8 @@
                     </div>
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <b>@lang('seed.productImage')</b> <br /><br />
-                        <img src="{{ URL::asset('storage/'.$data['seed']->getImage()) }}" />
+                        <img src="{{ URL::asset('storage/'.$data['seed']->getImage()) }}" width="400"
+     height="500"/>
                     </div>
                     <button class="button">
                         <a href="{{route('admin.delete', $data['seed']->getId())}}">@lang('admin.delete')</a>
