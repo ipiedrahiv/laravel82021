@@ -47,14 +47,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getRole()
+    public function getName()
     {
-        return $this->attributes['role'];
+        return $this->attributes['name'];
     }
 
-    public function setRole($role)
+    public function setName($name)
     {
-        $this->attributes['role'] = $role;
+        $this->attributes['name'] = $name;
     }
 
     public function getId()
@@ -67,14 +67,34 @@ class User extends Authenticatable
         $this->attributes['id'] = $id;
     }
 
-    public function getName()
+    public function getEmail()
     {
-        return $this->attributes['name'];
+        return $this->attributes['email'];
     }
 
-    public function setName($name)
+    public function setEmail($email)
     {
-        $this->attributes['name'] = $name;
+        $this->attributes['email'] = $email;
+    }
+
+    public function getPassword()
+    {
+        return $this->attributes['password'];
+    }
+
+    public function setPassword($password)
+    {
+        $this->attributes['password'] = $password;
+    }
+
+    public function getRole()
+    {
+        return $this->attributes['role'];
+    }
+
+    public function setRole($role)
+    {
+        $this->attributes['role'] = $role;
     }
 
     public function getPhone()

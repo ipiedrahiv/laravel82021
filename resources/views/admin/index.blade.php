@@ -20,7 +20,7 @@
                    <br /><br />
                    <a href="{{route('admin.order')}}">@lang('admin.orderList')</a>
                    <br /><br />
-                   <a href="{{route('admin.download')}}">@lang('admin.listProviders')</a>
+                   <a href="{{route('admin.download')}}">@lang('admin.listSeller')</a>
                 </div>
             </div>
         </div>
