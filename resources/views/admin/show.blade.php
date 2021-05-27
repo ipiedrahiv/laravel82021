@@ -21,7 +21,8 @@
                         <b>@lang('seed.productKeywords')</b> {{ $data["seed"]->getKeywords() }}<br /><br />
                     </div>
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <b>@lang('seed.productImage')</b> <img src="{{ asset('/img/'.$data['seed']->getImage()) }}"><br /><br />
+                        <b>@lang('seed.productImage')</b> <br /><br />
+                        <img src="{{ URL::asset('storage/'.$data['seed']->getImage()) }}" />
                     </div>
                     <button class="button">
                         <a href="{{route('admin.delete', $data['seed']->getId())}}">@lang('admin.delete')</a>

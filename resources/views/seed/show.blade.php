@@ -18,7 +18,8 @@
                     <b>@lang('seed.productPrice')</b> {{ $data["seed"]->getPrice() }}<br /><br />
                     <b>@lang('seed.productCategories')</b> {{ $data["seed"]->getCategories() }}<br /><br />
                     <b>@lang('seed.productKeywords')</b> {{ $data["seed"]->getKeywords() }}<br /><br />
-                    <b>@lang('seed.productImage')</b><img class="center" src="{{ asset('/img/'.$data['seed']->getImage()) }}"><br /><br />
+                    <b>@lang('seed.productImage')</b><br /><br />
+                    <img src="{{ URL::asset('storage/'.$data['seed']->getImage()) }}" />
                 </div>
             </div>
             <br /><br />
@@ -54,7 +55,7 @@
                 <div class="card-body">
                     {{ $review->getComment() }}
                     <br/><br/>
-                    <img class="center" src="{{ asset('/img/'.$review->getImage()) }}">
+                    <img src="{{ URL::asset('storage/'.$review->getImage()) }}" />
                 </div>
             </div>
             @endforeach
